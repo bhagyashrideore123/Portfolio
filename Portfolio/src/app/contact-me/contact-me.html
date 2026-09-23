@@ -1,0 +1,30 @@
+<h1>Contact me</h1>
+<article>
+    <p>Encourage people to contact you and describe what role you are interested in. Show that you will add value to
+        their projects through your work.
+        Example: Feel free to get in touch with job offers or opportunities such as: ...</p>
+    <section>
+        <div>
+            <img src="" alt="">
+            <p>E-main: deore.bhagyashri28@web.de</p>
+        </div>
+        <div>
+            <img src="" alt="">
+            <p>Tel: 0176 681 478 51</p>
+        </div>
+    </section>
+</article>
+<article>
+    <form [formGroup]="userForm"] action="">
+        <label for="name">Your name </label>
+        <input id="name" type="text" formControlName="name" />
+        <label for="email">Your Email </label>
+        <input id="email" type="email" formControlName="email" />
+        <label for="message">Your Message </label>
+        <input id="message" type="text" formControlName="message" />
+        <input type="checkbox" name="policycheck" id="policycheck">
+        <p>I've read the <a href="">privacy policy</a> and agree to the processing of my data as outlined.</p>
+        <button>Send</button>
+    </form>
+{{userForm.valid}}
+</article>
