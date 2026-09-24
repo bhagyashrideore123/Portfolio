@@ -15,16 +15,19 @@
     </section>
 </article>
 <article>
-    <form [formGroup]="userForm"] action="">
+    <form [formGroup]="userForm" (ngSubmit)="formSubmit()">
         <label for="name">Your name </label>
-        <input id="name" type="text" formControlName="name" />
+        <input id="name" type="text" formControlName="name"/>
+
         <label for="email">Your Email </label>
-        <input id="email" type="email" formControlName="email" />
+        <input id="email" type="email" formControlName="email"/>
+
         <label for="message">Your Message </label>
-        <input id="message" type="text" formControlName="message" />
-        <input type="checkbox" name="policycheck" id="policycheck">
+        <input id="message" type="text" formControlName="message"/>
+
+        <input type="checkbox" name="policycheck" formControlName="policycheck" id="policycheck">
         <p>I've read the <a href="">privacy policy</a> and agree to the processing of my data as outlined.</p>
-        <button>Send</button>
+        <button [disabled]="userForm.invalid" type="submit">Send</button>
     </form>
-{{userForm.valid}}
+
 </article>
