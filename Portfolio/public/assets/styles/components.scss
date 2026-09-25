@@ -2,81 +2,168 @@
 @use './mixins.scss' as m;
 
 .main-header {
+  @include m.flex-center;
+  justify-content: space-between;
+  max-width: 100%;
+  width: 100%;
+  height: 104px;
+  background-color: v.$header_footer_back;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  &_logo {
+    width: 58px;
+    height: 72px;
+  }
+
+  &_flex {
+    flex: 1;
+  }
+
+  &_headerMenu {
     @include m.flex-center;
-    justify-content: space-between;
-    max-width: 100%;
-    width: 100%;
-    height: 104px;
-    background-color: v.$header_footer_back;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-
-    &_logo {
-        width: 58px;
-        height: 72px;
-    }
-
-    &_flex {
-        flex: 1;
-    }
-
-    &_headerMenu {
-        @include m.flex-center;
-        flex-direction: row;
-        gap: 100px;
-        justify-content: center;
-    }
+    flex-direction: row;
+    gap: 100px;
+    justify-content: center;
+  }
 }
 
 .main-footer {
-    @include m.flex-center;
-    justify-content: space-between;
-    max-width: 100%;
-    width: 100%;
-    height: 214;
-    background-color: v.$header_footer_back;
-    a,p{
-        text-decoration: none;
-        color: v.$background;
-    }
+  @include m.flex-center;
+  justify-content: space-between;
+  max-width: 100%;
+  width: 100%;
+  height: 214;
+  background-color: v.$header_footer_back;
+  a,
+  p {
+    text-decoration: none;
+    color: v.$background;
+  }
 
-    &_iconAlign{
-        gap: 30px;
-    }
+  &_iconAlign {
+    gap: 30px;
+  }
 }
 
 .main_legalNotice {
-    background: v.$background;
-    max-width: 100%;
+  background: v.$background;
+  max-width: 100%;
 
-    &_legal-notice {
-        @include m.flex-center;
-        flex-direction: column;
-        justify-content: center;
-        font-weight: 400;
+  &_legal-notice {
+    @include m.flex-center;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: 400;
 
-        h1 {
-        color: v.$primary;
-        font-size: 2.2rem;
-        }
-        h2 {
-        color: v.$primary;
-        font-size: 1rem;
-        }
-        p {
-        color: v.$secondary;
-        }
-        section {
-        .textColor {
-            color: v.$primary;
-        }
-        }
+    h1 {
+      color: v.$primary;
+      font-size: 2.2rem;
     }
+    h2 {
+      color: v.$primary;
+      font-size: 1rem;
+    }
+    p {
+      color: v.$secondary;
+    }
+    section {
+      .textColor {
+        color: v.$primary;
+      }
+    }
+  }
 }
 
-.hero{
-        @include m.flex-center;
-        justify-content: space-between;
-        background-color: v.$background;
+.hero {
+  @include m.flex-center;
+  justify-content: space-between;
+  background-color: v.$background;
+  &_img {
+    width: 66px;
+    height: 73px;
+  }
+  h1 {
+    font-size: clamp(1.75rem, 5vw, 5.5rem);
+    font-weight: 400;
+  }
+  p {
+    color: v.$secondary;
+    font-size: clamp(1.25rem, 2.5vw, 2.5rem);
+  }
+  &_person {
+    height: 683px;
+    width: 535px;
+  }
+  &_row_align {
+    @include m.flex-center;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+  &_social-icons {
+    @include m.flex-center;
+    flex-direction: column;
+    gap: 16px;
+    img {
+      width: 30px;
+      height: 30px;
     }
+  }
+  &_scroll-down {
+    padding: 10px 5px;
+    border: 1px solid v.$primary;
+    border-radius: 30px;
+  }
+  &_scroll-down:hover {
+    cursor: pointer;
+    padding: 10px 5px;
+    border: 1px solid v.$primary;
+    background-color: v.$button_hover;
+    color: v.$primary;
+  }
+  &_detail {
+    @include m.flex-center;
+    gap: 100px;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+.whyme {
+  @include m.flex-center;
+  background-color: v.$background;
+  flex-direction: column;
+  width: 100%;
+  color: v.$secondary;
+  &_text-color {
+    color: v.$primary;
+  }
+  &_blocks {
+    @include m.flex-center;
+    justify-content: space-between;
+  }
+
+  h1 {
+    color: v.$primary;
+    font-weight: 400;
+  }
+
+  &_letsTalk {
+    padding: 13px 30px;
+    border-radius: 30px;
+    border: 1px solid v.$primary;
+    background-color: v.$background;
+    color: v.$primary;
+  }
+
+  &_letsTalk:hover {
+    cursor: pointer;
+    padding: 13px 30px;
+    border: 1px solid v.$primary;
+    background-color: v.$button_hover;
+    color: v.$primary;
+  }
+}
