@@ -1,0 +1,82 @@
+@use './variables' as v;
+@use './mixins.scss' as m;
+
+.main-header {
+    @include m.flex-center;
+    justify-content: space-between;
+    max-width: 100%;
+    width: 100%;
+    height: 104px;
+    background-color: v.$header_footer_back;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    &_logo {
+        width: 58px;
+        height: 72px;
+    }
+
+    &_flex {
+        flex: 1;
+    }
+
+    &_headerMenu {
+        @include m.flex-center;
+        flex-direction: row;
+        gap: 100px;
+        justify-content: center;
+    }
+}
+
+.main-footer {
+    @include m.flex-center;
+    justify-content: space-between;
+    max-width: 100%;
+    width: 100%;
+    height: 214;
+    background-color: v.$header_footer_back;
+    a,p{
+        text-decoration: none;
+        color: v.$background;
+    }
+
+    &_iconAlign{
+        gap: 30px;
+    }
+}
+
+.main_legalNotice {
+    background: v.$background;
+    max-width: 100%;
+
+    &_legal-notice {
+        @include m.flex-center;
+        flex-direction: column;
+        justify-content: center;
+        font-weight: 400;
+
+        h1 {
+        color: v.$primary;
+        font-size: 2.2rem;
+        }
+        h2 {
+        color: v.$primary;
+        font-size: 1rem;
+        }
+        p {
+        color: v.$secondary;
+        }
+        section {
+        .textColor {
+            color: v.$primary;
+        }
+        }
+    }
+}
+
+.hero{
+        @include m.flex-center;
+        justify-content: space-between;
+        background-color: v.$background;
+    }

@@ -1,0 +1,12 @@
+@mixin flex-center{
+    display: flex;
+    align-items: center;
+}
+
+@mixin heading{
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 60px;
+    line-height: 120%;
+    text-align: center;
+}
