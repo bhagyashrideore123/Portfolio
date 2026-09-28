@@ -2,44 +2,48 @@
 @use './mixins.scss' as m;
 
 .main-header {
- 
-  justify-content: space-between;
-  max-width: 100%;
+  @include m.flex-center;
   width: 100%;
-  height: 104px;
   background-color: v.$header_footer_back;
   position: sticky;
   top: 0;
   z-index: 10;
   gap: 197px;
   cursor: pointer;
+  height: 104px;
+  justify-content: center;
 
-  &_wrapper{
+  &_wrapper {
     @include m.flex-center;
     max-width: 1440px;
-    width: 100%;
+    justify-content: space-between;
+    gap: 200px;
   }
   &_logo {
     width: 58px;
     height: 72px;
   }
-  &_headerMenu {
+  &_headerMenu_item {
     @include m.flex-center;
     flex-direction: row;
     gap: 90px;
+    color: v.$background;
     justify-content: center;
+    text-decoration: none;
+    font-family: Josefin Sans;
   }
-   &_headerMenu_item:hover{
+  &_headerMenu_item:hover {
     color: v.$secondary;
     cursor: pointer;
-   }
-   &_active{
-    
-   }
-   &_active:hover{
-     color: v.$secondary;
-     cursor: pointer;
-   }
+    text-decoration: none;
+  }
+  &_active {
+    font-family: Josefin Sans;
+  }
+  &_active:hover {
+    color: v.$secondary;
+    cursor: pointer;
+  }
 }
 
 .main-footer {
@@ -49,6 +53,7 @@
   width: 100%;
   height: 214;
   background-color: v.$header_footer_back;
+  font-family: Josefin Sans;
   a,
   p {
     text-decoration: none;
@@ -63,6 +68,7 @@
 .main_legalNotice {
   background: v.$background;
   max-width: 100%;
+  font-family: Josefin Sans;
 
   &_legal-notice {
     @include m.flex-center;
@@ -90,9 +96,16 @@
 }
 
 .hero {
-  @include m.flex-center;
-  justify-content: space-between;
   background-color: v.$background;
+  padding: 40px 120px 0px 120px;
+  justify-content: center;
+
+  &_wrapper {
+    max-width: 1440px;
+    @include m.flex-center;
+    justify-content: space-between;
+  }
+
   &_img {
     width: 66px;
     height: 73px;
@@ -105,32 +118,33 @@
   p {
     color: v.$secondary;
     font-size: clamp(1.25rem, 2.5vw, 2.5rem);
+    font-family: Anta;
   }
-  &_back{
+  &_back {
     position: relative;
+    bottom: -30px;
     height: 683px;
     width: 100%;
-    background-image: url("../../../public/assets/fonts/images/icons/primary_shape_person.svg");
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: contain; 
-  
+    // background-image: url('../../../public/assets/fonts/images/icons/primary_shape_person.svg');
+    // background-repeat: no-repeat;
+    // background-position: bottom;
+    // background-size: contain;
   }
-  &_back:hover{
-    background-image: url("../../../public/assets/fonts/images/icons/secondary_shape_person.svg");
+  &_back:hover {
+    background-image: url('../../../public/assets/fonts/images/icons/secondary_shape_person.svg');
     background-repeat: no-repeat;
     background-position: bottom;
-    background-size: contain; 
+    background-size: contain;
   }
   &_person_img {
     position: absolute;
-    bottom: 0;                // anchors the photo to the bottom of the shape, like your screenshot
-    left: 55%;
+    bottom: 0px;
+    left: 300px;
     transform: translateX(-50%);
-    width: 60%;                // photo is narrower than the full shape width
+    width: 100%;
     height: 100%;
-    z-index: 10;                // sits on top of the background shape
-    object-fit: cover;
+    z-index: 10;
+    object-fit: contain;
   }
   &_row_align {
     @include m.flex-center;
@@ -172,24 +186,34 @@
   @include m.flex-center;
   background-color: v.$background;
   flex-direction: column;
-  width: 100%;
   color: v.$secondary;
+  width: 100%;
+  font-family: Josefin Sans;
 
-  &_wrapper{
-    width: 900px;
+  &_wrapper {
+    text-align: center;
     max-width: 1440px;
+    margin-top: 100px;
+  }
+  &_text {
+    @include m.flex-center;
+    width: 100%;
+    justify-content: center;
+    font-size: 1.8rem;
+  }
+  &_text_btn {
+    width: 100%;
+    text-align: justify;
   }
   &_text-color {
     color: v.$primary;
   }
   &_blocks {
     @include m.flex-center;
+    align-items: self-start;
     justify-content: space-between;
-  }
-
-  h1 {
-    color: v.$primary;
-    font-weight: 400;
+    margin-top: 80px;
+    gap: 50px;
   }
 
   &_letsTalk {
@@ -198,6 +222,7 @@
     border: 1px solid v.$primary;
     background-color: v.$background;
     color: v.$primary;
+    float: right;
   }
 
   &_letsTalk:hover {
@@ -206,5 +231,139 @@
     border: 1px solid v.$primary;
     background-color: v.$button_hover;
     color: v.$primary;
+  }
+}
+
+.mySkills {
+  @include m.flex-center;
+  background-color: v.$background;
+  flex-direction: column;
+  width: 100%;
+  color: v.$secondary;
+  padding-top: 100px;
+  font-family: Josefin Sans;
+
+  &_wrapper {
+    max-width: 1440px;
+  }
+  &_layout {
+    @include m.flex-center;
+    justify-content: space-between;
+    margin-top: 80px;
+  }
+
+  &_gridWrapper {
+    @include m.flex-center;
+    justify-content: center;
+    width: 80%;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+  &_item {
+    @include m.flex-center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  &_circle {
+    width: 100%;
+    height: 380px;
+    position: relative;
+    background-image: url('../../assets/fonts/images/icons/mySkillsBack.svg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+  }
+  &_circle_text {
+    position: absolute;
+    top: 88px;
+    left: 150px;
+    width: 50%;
+    text-align: center;
+  }
+  &__LIcons {
+    @include m.flex-center;
+    justify-content: center;
+    padding: 20px;
+  }
+}
+
+.aboutme {
+  @include m.flex-center;
+  justify-content: center;
+  width: 100%;
+  background-color: v.$background;
+  padding-top: 100px;
+  color: v.$secondary;
+  font-family: Josefin Sans;
+  h2 {
+    color: v.$primary;
+    font-size: clamp(1.25rem, 2.5vw, 2rem);
+    margin-bottom: 3rem;
+    text-align: center;
+    font-weight: 400;
+    padding-top: 100px;
+  }
+  &_wrapper {
+    max-width: 1440px;
+    justify-content: center;
+    @include m.flex-center;
+    flex-direction: column;
+  }
+
+  &_flexwapper {
+    @include m.flex-center;
+    justify-content: space-between;
+  }
+  &_grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding-top: 50px;
+
+  }
+  &_card {
+    position: relative;
+    flex: 1 1 260px; // grow, shrink, and never go below 260px wide:flex-grow: 1; flex-shrink: 1; flex-basis: 260px:
+    max-width: 340px; // stops a lone card from stretching too wide
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('/assets/fonts/images/icons/mySkillsBack.svg') no-repeat center / contain;
+    }
+
+    &:nth-child(2)::before {
+      transform: rotate(90deg);
+    }
+    &:nth-child(3)::before {
+      transform: scaleX(-1);
+    }
+  }
+  &_content {
+    position: relative; // sits above the ::before layer
+    width: 72%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    h3 {
+      font-size: clamp(1.1rem, 1.6vw, 1.4rem);
+    }
+    blockquote {
+      font-size: clamp(0.8rem, 1vw, 0.95rem);
+      line-height: 1.5;
+    }
+    a {
+      text-decoration: underline;
+      font-size: 0.85rem;
+      color: v.$primary;
+    }
   }
 }

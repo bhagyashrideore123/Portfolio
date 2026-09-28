@@ -6,4 +6,8 @@ import { Component } from '@angular/core';
   styleUrl: './why-me.scss',
   templateUrl: './why-me.html',
 })
-export class WhyMe {}
+export class WhyMe {
+  goToContactForm(){
+    
+  }
+}

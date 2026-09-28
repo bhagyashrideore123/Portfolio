@@ -1,7 +1,38 @@
-<h1>My Skills</h1>
-<article>
-<section>
-<img src="" alt="">
+<section class="mySkills" id="skills">
+    <div class="mySkills_wrapper">
+        <h1>My Skills</h1>
+
+        <div class="mySkills_layout">
+            <div class="mySkills_gridWrapper">
+
+                @for (skill of skills; track skill.name) {
+                <div class="mySkills_item">
+                    <img [src]="skill.icon" [alt]="skill.name">
+                    <p>{{ skill.name }}</p>
+                </div>
+                }
+
+            </div>
+            <div class="mySkills_circle">
+                <div class="mySkills_circle_text">
+                    <p>I am currently learning</p>
+
+                    <div class="mySkills_LIcons">
+                        @for (item of learning; track item.name) {
+                        <div class="mySkills_Litem">
+                            <img [src]="item.icon" [alt]="item.name">
+                            <p>{{ item.name }}</p>
+                        </div>
+                        }
+                    </div>
+
+                    <p class="mySkills_Ltext">
+                        Show that you are motivated to continually improve your skills,
+                        implement innovative solutions and stay abreast of new technologies.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
 </section>
-<section></section>
-</article>

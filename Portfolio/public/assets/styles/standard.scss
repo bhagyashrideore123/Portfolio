@@ -1,11 +1,24 @@
 @use './variables' as v;
+@use './mixins.scss' as m;
 
 *{
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
     scroll-behavior: smooth;
-    position: relative;
-    font-family:Anta;
+    position: relative;   
     font-weight: 400;
     max-height: 100dvh;
+
+}
+h1{
+    @include m.heading;
+    color: v.$primary;
+    font-weight: 400;
+    font-family:Anta;
+}
+
+.linkedINLInks{
+    font-family:Josefin Sans;
+    font-weight: 400;
+    font-size: 1rem;
 }
