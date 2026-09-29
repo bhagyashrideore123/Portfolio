@@ -7,11 +7,35 @@
   background-color: v.$header_footer_back;
   position: sticky;
   top: 0;
+  left: 0;
   z-index: 10;
   gap: 197px;
   cursor: pointer;
   height: 104px;
   justify-content: center;
+  font-size: clamp(16px, 1.5rem + 1vw, 26px);
+
+  figure {
+    @include m.flex-center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    .flex_text_logo {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+    h5 {
+      color: v.$secondary;
+      font-family: Anta;
+    }
+    p {
+      color: v.$background;
+      font-family: Anta;
+    }
+  }
 
   &_wrapper {
     @include m.flex-center;
@@ -48,20 +72,63 @@
 
 .main-footer {
   @include m.flex-center;
-  justify-content: space-between;
+  flex-direction: column;
   max-width: 100%;
   width: 100%;
-  height: 214;
+  padding: 80px 80px;
   background-color: v.$header_footer_back;
   font-family: Josefin Sans;
+  font-size: 1.2rem;
+
+  &_wrapper {
+    @include m.flex-center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1440px;
+  }
+
+  figure {
+    @include m.flex-center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    .flex_text_logo {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+    h5 {
+      color: v.$secondary;
+      font-family: Anta;
+    }
+    p {
+      color: v.$background;
+      font-family: Anta;
+    }
+  }
+
+  &_text {
+    p {
+      padding-top: 16px;
+    }
+  }
   a,
   p {
     text-decoration: none;
     color: v.$background;
   }
-
+  h5 {
+    color: v.$secondary;
+  }
+  a:hover {
+    color: v.$secondary;
+  }
   &_iconAlign {
-    gap: 30px;
+    @include m.flex-center;
+    gap: 16px;
+    justify-content: space-between;
   }
 }
 
@@ -115,6 +182,12 @@
     font-weight: 400;
     color: v.$secondary;
   }
+  h5 {
+    color: v.$secondary;
+    font-weight: 400;
+    font-size: 1rem;
+    font-family: Anta;
+  }
   p {
     color: v.$secondary;
     font-size: clamp(1.25rem, 2.5vw, 2.5rem);
@@ -146,11 +219,27 @@
     z-index: 10;
     object-fit: contain;
   }
+  figure {
+    @include m.flex-center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
   &_row_align {
     @include m.flex-center;
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
+    .logoTxt {
+      font-size: 1rem;
+      color: v.$primary;
+    }
+    .flex_text_logo {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
   }
   &_social-icons {
     @include m.flex-center;
@@ -197,12 +286,12 @@
   }
   &_text {
     @include m.flex-center;
-    width: 100%;
+    width: 50%;
     justify-content: center;
     font-size: 1.8rem;
   }
   &_text_btn {
-    width: 100%;
+    width: 40%;
     text-align: justify;
   }
   &_text-color {
@@ -211,9 +300,8 @@
   &_blocks {
     @include m.flex-center;
     align-items: self-start;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 80px;
-    gap: 50px;
   }
 
   &_letsTalk {
@@ -240,50 +328,104 @@
   flex-direction: column;
   width: 100%;
   color: v.$secondary;
-  padding-top: 100px;
+  padding: 100px 2rem 60px;
   font-family: Josefin Sans;
 
   &_wrapper {
+    width: 100%;
     max-width: 1440px;
   }
   &_layout {
     @include m.flex-center;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 3rem;
     margin-top: 80px;
   }
 
   &_gridWrapper {
-    @include m.flex-center;
-    justify-content: center;
-    width: 80%;
-    flex-wrap: wrap;
-    gap: 40px;
+    flex: 2 1 420px;
+    max-width: 520px; // caps the width so it can't spread into one long row
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); // 4 equal columns, like your design
+    gap: 40px 24px; // row gap, column gap
+    justify-items: center;
   }
   &_item {
     @include m.flex-center;
-    justify-content: center;
     flex-direction: column;
+    gap: 0.5rem;
+    text-align: center; // lets "Material Design" wrap onto two lines
+
+    img {
+      width: clamp(44px, 5vw, 64px);
+    } // same icon size for every skill
   }
   &_circle {
-    width: 100%;
-    height: 380px;
     position: relative;
-    background-image: url('../../assets/fonts/images/icons/mySkillsBack.svg');
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: contain;
+    flex: 1 1 300px; // smaller share, min 300px
+    max-width: 420px;
+    aspect-ratio: 1; // box scales with width, so no fixed height
+    display: flex;
+    align-items: center; // centers the text, no top/left pixels
+    justify-content: center;
+
+    &::before {
+      // blob on its own layer, behind the text
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('/assets/fonts/images/icons/mySkillsBack.svg') no-repeat center / contain;
+    }
   }
   &_circle_text {
-    position: absolute;
-    top: 88px;
-    left: 150px;
-    width: 50%;
+    position: relative; // sits above the ::before layer
+    width: 72%;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: clamp(0.8rem, 1vw, 1rem);
   }
-  &__LIcons {
+  &_LIcons {
+    // single underscore, now matches the HTML
     @include m.flex-center;
     justify-content: center;
-    padding: 20px;
+    gap: 1.5rem;
+    padding: 0.5rem 0;
+  }
+
+  &_Litem {
+    @include m.flex-center;
+    flex-direction: column;
+    gap: 0.25rem;
+
+    img {
+      width: clamp(24px, 3vw, 32px);
+    }
+  }
+
+  &_Ltext {
+    margin: 0;
+    line-height: 1.5;
+  }
+  @media (max-width: 480px) {
+    &_circle {
+      aspect-ratio: auto;
+      padding: 2.5rem 1.5rem;
+    }
+  }
+  @media (max-width: 800px) {
+    &_gridWrapper {
+      grid-template-columns: repeat(3, 1fr);
+      max-width: 100%;
+    }
+  }
+  @media (max-width: 480px) {
+    &_gridWrapper {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 }
 
@@ -292,7 +434,6 @@
   justify-content: center;
   width: 100%;
   background-color: v.$background;
-  padding-top: 100px;
   color: v.$secondary;
   font-family: Josefin Sans;
   h2 {
@@ -320,7 +461,7 @@
     justify-content: center;
     gap: 2rem;
     padding-top: 50px;
-
+    max-width: 1440px;
   }
   &_card {
     position: relative;
@@ -365,5 +506,261 @@
       font-size: 0.85rem;
       color: v.$primary;
     }
+  }
+}
+
+.contact {
+  @include m.flex-center;
+  justify-content: center;
+  background-color: v.$background;
+  flex-direction: column;
+  width: 100%;
+  color: v.$secondary;
+  padding: 100px;
+  font-family: Josefin Sans;
+
+  input {
+    width: 445px;
+    height: 60px;
+    border-radius: 30px;
+    color: v.$secondary;
+    border: 1px solid v.$button_border;
+    background-color: v.$background;
+    text-indent: 25px; //it decides from which point cursor start writing
+  }
+
+  input:hover {
+    background-color: v.$button_hover;
+  }
+
+  &_wrapper {
+    max-width: 1440px;
+    width: 100%;
+  }
+  &_align_info {
+    @include m.flex-center;
+    justify-content: center;
+    gap: 30px;
+    padding-top: 80px;
+  }
+  &_para {
+    max-width: 550px;
+  }
+  &_para1 {
+    max-width: 550px;
+    &_email,
+    &_tel {
+      @include m.flex-center;
+      justify-content: flex-start;
+      gap: 20px;
+    }
+    &_email:hover,
+    &_tel:hover {
+      color: v.$primary;
+      cursor: pointer;
+    }
+  }
+  &_form {
+    @include m.flex-center;
+    flex-direction: column;
+    padding-top: 50px;
+
+    &_align_part1 {
+      @include m.flex-center;
+      justify-content: center;
+      gap: 20px;
+      label {
+        color: v.$primary;
+      }
+    }
+    &_padding {
+      padding-top: 20px;
+    }
+    &_message_input {
+      width: 100%;
+      color: v.$primary;
+    }
+    &_message_label {
+      color: v.$primary;
+    }
+    &_message_textarea {
+      scrollbar-width: none;
+      width: 900px;
+      max-width: 900px;
+      min-width: 900px;
+      color: v.$secondary;
+      border: 1px solid v.$button_border;
+      background-color: v.$background;
+      border-radius: 30px;
+      height: 164px;
+      text-indent: 25px;
+      padding-top: 20px;
+    }
+    &_message_textarea:hover {
+      background-color: v.$button_hover;
+    }
+    &_sent_Btn:disabled {
+      border: 1px solid v.$button_disabled;
+      background-color: v.$background;
+      color: v.$button_disabled;
+      float: right;
+    }
+    &_sent_Btn {
+      padding: 13px 30px;
+      border-radius: 30px;
+      border: 1px solid v.$primary;
+      background-color: v.$background;
+      color: v.$primary;
+      float: right;
+    }
+    &_flexCheckdbox {
+      @include m.flex-center;
+      gap: 10px;
+      justify-content: flex-start;
+      width: 900px;
+      p {
+        width: 850px;
+      }
+      a {
+        color: v.$primary;
+        text-decoration: none;
+      }
+    }
+    &_checkbox {
+      width: 20px !important;
+      border-radius: 100% !important;
+    }
+    &_button {
+      @include m.flex-center;
+      width: 900px;
+      justify-content: flex-end;
+    }
+  }
+}
+
+:host {
+  font-family: Josefin Sans;
+  display: flex;
+  justify-content: center;
+}
+.projects {
+  font-family: Josefin Sans;
+  color: v.$secondary;
+  background-color: v.$background;
+
+  [ngTabs] {
+    overflow: hidden;
+    width: 100%;
+  }
+  [ngTabList] {
+    padding: 0;
+    display: flex;
+    list-style: none;
+    position: relative;
+  }
+  [ngTab] {
+    flex: 1;
+    outline: none;
+    padding: 2rem 0;
+    cursor: pointer;
+    text-align: center;
+    color: v.$secondary;
+    font-size: clamp(18px, calc(14.571px + 1.071vw), 30px);
+  }
+  [ngTab][aria-selected='false']:focus {
+    color: v.$secondary;
+    outline-offset: -8px;
+    border-radius: 0.7rem;
+  }
+  [ngTab]:hover {
+    color: v.$primary;
+  }
+  [ngTab][aria-selected='true'] {
+    color: v.$secondary;
+    background-color: v.$projects_background;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+  }
+  .sliding-window {
+    width: 200%;
+    display: flex;
+    transition: transform 0.2s ease-in-out;
+    .information {
+      @include m.flex-center;
+      justify-content: space-between;
+      gap: 60px;
+      li {
+        list-style: none;
+        position: relative;
+        padding-left: 25px;
+        font-size: clamp(18px, calc(15.143px + 0.893vw), 28px);
+        font-weight: 400;
+        padding-top: 30px;
+        p{
+          padding-top: 16px;
+          font-size: clamp(14px, calc(12.857px + 0.357vw), 18px);
+          font-weight: 400;
+        }
+      }
+
+      li::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 32px;
+
+        width: 16px;
+        height: 25px;
+
+        background-image: url('../../../public/assets/fonts/images/icons/bullet.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+    }
+    .information_project {
+      @include m.flex-center;
+      flex-direction: column;
+      justify-content: center;
+      &_logo {
+        padding-top: 12px;
+        @include m.flex-center;
+        gap: 30px;
+      }
+      &_button {
+        @include m.flex-center;
+        gap: 30px;
+      }
+    }
+    .logo {
+      width: 32px;
+      height: 36px;
+    }
+    .project1 {
+      width: 450px;
+      height: 300px;
+      object-fit: contain;
+      border-radius: 30px;
+    }
+  }
+
+  [ngTabPanel] {
+    flex: 0 0 50%;
+    box-sizing: border-box;
+    padding: 1rem;
+    min-height: 100px;
+    background-color: v.$projects_background;
+  }
+
+  [ngTabList]:has([ngTab]:nth-child(1)[aria-selected='true']) ~ .sliding-window {
+    transform: translateX(0);
+  }
+
+  [ngTabList]:has([ngTab]:nth-child(2)[aria-selected='true']) ~ .sliding-window {
+    transform: translateX(-50%);
+  }
+  [ngTabPanel]:focus {
+    outline-offset: -4px;
+    border-radius: 0.5rem;
+
   }
 }

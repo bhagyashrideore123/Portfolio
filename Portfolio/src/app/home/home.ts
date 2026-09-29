@@ -6,9 +6,10 @@ import { WhyMe } from '../why-me/why-me';
 import { ContactMe } from '../contact-me/contact-me';
 import { MySkills } from '../my-skills/my-skills';
 import { AboutMe } from '../about-me/about-me';
+import { Projects } from '../projects/projects';
 
 @Component({
-  imports: [Hero,Header,Footer,WhyMe,ContactMe,MySkills,AboutMe],
+  imports: [Hero,Header,Footer,WhyMe,ContactMe,MySkills,AboutMe,Projects],
   selector: 'app-home',
   styleUrl: './home.scss',
   templateUrl: './home.html',

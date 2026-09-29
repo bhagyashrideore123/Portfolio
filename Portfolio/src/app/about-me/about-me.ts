@@ -11,13 +11,13 @@ export class AboutMe {
   {
     name: 'Sahra Mueller',
     project: 'DA Bublle',
-    quote: 'Claudia had to develop, format and deliver content in collaboration with the team members. She is a reliable and friendly person.',
+    quote: 'Bhagyashri had to develop, format and deliver content in collaboration with the team members. She is a reliable and friendly person.',
     linkedin: 'https://www.linkedin.com/'
   },
   {
     name: 'James Rugman',
     project: 'Join',
-    quote: 'Claudia is a reliable and friendly person. Works in a structured way and write a clear code. I recommend her as a colleague.',
+    quote: 'Bhagyashri is a reliable and friendly person. Works in a structured way and write a clear code. I recommend her as a colleague.',
     linkedin: 'https://www.linkedin.com/'
   },
   {

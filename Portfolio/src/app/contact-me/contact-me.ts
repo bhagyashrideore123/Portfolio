@@ -1,5 +1,14 @@
 import { Component, inject } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, ReactiveFormsModule, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+
+// this validator is for name:checks if name is empty
+export function forbiddenNameValidator(name: string): ValidatorFn {
+  return (control: AbstractControl): ValidationErrors | null => {    
+    return control.value == name ? {forbiddenName: {value: control.value}} : null;
+  };
+}
+
 
 
 @Component({
@@ -9,27 +18,31 @@ import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } 
   templateUrl: './contact-me.html',
 })
 export class ContactMe {
+
+  router = inject(Router);
   fb = inject(FormBuilder)
+  sentForm: boolean = false;
+
   userForm = this.fb.group({
-      name:['',Validators.required, Validators.minLength(5)],
-      email:['',Validators.required, Validators.email] ,
-      message:['',Validators.required, Validators.email, Validators.maxLength(200)],
+      name:['',[Validators.required,forbiddenNameValidator(' ')]],
+      email:['',[Validators.required, Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')]] ,
+      message:['',[Validators.required, Validators.email, Validators.maxLength(200)]],
       policycheck:['',Validators.required],
   })
-  // userForm = new FormGroup({                                           //using form group
-  //   name: new FormControl('', {
-  //     validators: [Validators.required, Validators.minLength(5), Validators.maxLength(20)],
-  //   }),
-  //   email: new FormControl('', { validators: [Validators.required, Validators.email] }),
-  //   message: new FormControl('', {
-  //     validators: [Validators.required, Validators.email, Validators.maxLength(100)],
-  //   }),
-  //   policycheck: new FormControl('', { validators: [Validators.required] }),
-  // });
+
+  ngOninit()
+  {
+    
+  }
 
   formSubmit()
   {
-    console.log(this.userForm.value);
+    if(!this.userForm.invalid)
+    {
+      console.log(this.userForm.value);
+      this.router.navigate(['']);
+    }
+  
   }
 
   formReset()

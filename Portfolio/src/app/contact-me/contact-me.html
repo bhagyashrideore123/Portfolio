@@ -1,35 +1,82 @@
 <div class="contact" id="contact">
-<article>
-<h1>Contact me</h1>
-    <p>Encourage people to contact you and describe what role you are interested in. Show that you will add value to
-        their projects through your work.
-        Example: Feel free to get in touch with job offers or opportunities such as: ...</p>
-    <section>
-        <div>
-            <img src="assets/fonts/images/icons/🦆 icon _email_.svg" alt="mail_icon">
-            <p>E-main: deore.bhagyashri28@web.de</p>
+    <div class="contact_wrapper">
+        <h1>Contact me</h1>
+        <div class="contact_align_info">
+            <section class="contact_para">
+                <p>Encourage people to contact you and describe what role you are interested in. Show that you will add
+                    value to
+                    their projects through your work.
+                    Example: Feel free to get in touch with job offers or opportunities such as: ...
+                </p>
+            </section>
+            <section class="contact_para1">
+                <div class="contact_para1_email">
+                    <img src="assets/fonts/images/icons/🦆 icon _email_.svg" alt="mail_icon">
+                    <p>E-main: deore.bhagyashri28@web.de</p>
+                </div>
+                <div class="contact_para1_tel">
+                    <img src="assets/fonts/images/icons/🦆 icon _phone_.svg" alt="phone_icon">
+                    <p>Tel: 0176 681 478 51</p>
+                </div>
+            </section>
+
         </div>
-        <div>
-            <img src="assets/fonts/images/icons/🦆 icon _phone_.svg" alt="phone_icon">
-            <p>Tel: 0176 681 478 51</p>
-        </div>
-    </section>
-</article>
-<article>
-    <form [formGroup]="userForm" (ngSubmit)="formSubmit()">
-        <label for="name">Your name </label>
-        <input id="name" type="text" formControlName="name"/>
+        <form [formGroup]="userForm" (ngSubmit)="formSubmit()" class="contact_form">
+            <div class="contact_form_align_part1">
+                <div>
+                @if (userForm.controls['name'].touched || userForm.controls['name'].dirty) {
+                    @if(userForm.controls['name'].errors?.['required']){
+                        <span class="error">Your name is required</span><br>
+                    }@else {
+                    <label for="name">Your name </label><br>
+                    }
+    
+                }@else {
+                    <label for="name">Your name </label><br>
+                    } 
+                    <input id="name" type="text" formControlName="name" /><br>
+                </div>
+                <div>
+                    @if (userForm.controls['email'].touched || userForm.controls['email'].dirty) {
+                        @if (userForm.controls['email'].errors?.['required']) {
+                        <span class="error">Your Email is required</span><br>
+                        } @else if (userForm.controls['email'].errors?.['pattern'] ||
+                        userForm.controls['email'].errors?.['email']) {
+                        <span class="error">Your email is not valid</span><br>
+                        } @else {
+                        <label for="email">Your Email</label><br>
+                        }
+                    } @else {
+                        <label for="email">Your Email</label><br>
+                    }
 
-        <label for="email">Your Email </label>
-        <input id="email" type="email" formControlName="email"/>
+                    <input id="email" type="email" formControlName="email" /><br>
+                </div>
+            </div>
 
-        <label for="message">Your Message </label>
-        <input id="message" type="text" formControlName="message"/>
+            <div class="contact_form_padding">
+                @if(userForm.controls['message'].errors?.['required'] && (userForm.controls['message'].touched ||
+                userForm.controls['message'].dirty)){
+                <span class="error">Your Message is required</span><br>
+                }@else {
+                <label class="contact_form_message_label" for="message">Your Message </label><br>
+                }
+                <textarea class="contact_form_message_textarea" id="description" formControlName="message"
+                    rows="5"></textarea>
+            </div>
+            <div class="contact_form_flexCheckdbox">
+                <input class="contact_form_checkbox" type="checkbox" name="policycheck" formControlName="policycheck"
+                    id="policycheck">
+                <label for="policycheck">I've read the <a href="">privacy policy</a> and agree to the processing of my
+                    data as outlined.</label>
+            </div>
+            <div class="contact_form_button">
+            {{userForm.valid}}
+                <button class="contact_form_sent_Btn" type="submit">Send</button>
+            </div>
 
-        <input type="checkbox" name="policycheck" formControlName="policycheck" id="policycheck">
-        <p>I've read the <a href="">privacy policy</a> and agree to the processing of my data as outlined.</p>
-        <button [disabled]="userForm.invalid" type="submit">Send</button>
-    </form>
 
-</article>
+        </form>
+
+    </div>
 </div>

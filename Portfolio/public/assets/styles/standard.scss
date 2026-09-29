@@ -7,8 +7,7 @@
     scroll-behavior: smooth;
     position: relative;   
     font-weight: 400;
-    max-height: 100dvh;
-
+    box-sizing: border-box;
 }
 h1{
     @include m.heading;
@@ -21,4 +20,23 @@ h1{
     font-family:Josefin Sans;
     font-weight: 400;
     font-size: 1rem;
+}
+.error{
+    color: v.$error_color;
+}
+
+.button_primary{
+    padding: 13px 30px;
+    border-radius: 30px;
+    border: 1px solid v.$primary;
+    background-color: v.$background;
+    color: v.$primary;
+
+}
+.button_primary:hover{
+    cursor: pointer;
+    padding: 13px 30px;
+    border: 1px solid v.$primary;
+    background-color: v.$primary;
+    color: v.$background;
 }
