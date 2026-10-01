@@ -1,42 +1,51 @@
 @use './variables' as v;
 @use './mixins.scss' as m;
 
-*{
+* {
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
-    position: relative;   
+    position: relative;
     font-weight: 400;
     box-sizing: border-box;
+    
 }
-h1{
+h1 {
     @include m.heading;
     color: v.$primary;
     font-weight: 400;
-    font-family:Anta;
+    font-family: Anta;
 }
 
-.linkedINLInks{
-    font-family:Josefin Sans;
+.linkedINLInks {
+    font-family: Josefin Sans;
     font-weight: 400;
     font-size: 1rem;
 }
-.error{
+.error {
     color: v.$error_color;
 }
 
-.button_primary{
+.button_primary {
     padding: 13px 30px;
     border-radius: 30px;
     border: 1px solid v.$primary;
     background-color: v.$background;
     color: v.$primary;
-
+    a {
+        text-decoration: none;
+        color: v.$primary;
+        font-family: Josefin Sans;
+        font-size: 1.2rem;
+    }
 }
-.button_primary:hover{
+.button_primary:hover {
     cursor: pointer;
     padding: 13px 30px;
     border: 1px solid v.$primary;
     background-color: v.$primary;
-    color: v.$background;
+    a {
+        color: v.$background;
+    }
 }
+

@@ -60,7 +60,13 @@
     color: v.$secondary;
     cursor: pointer;
     text-decoration: none;
+    background-image: url('/assets/fonts/images/icons/menu-background.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: 100;
   }
+
   &_active {
     font-family: Josefin Sans;
   }
@@ -133,15 +139,41 @@
 }
 
 .main_legalNotice {
+  @include m.flex-center;
+  align-items: left;
+  flex-direction: column;
   background: v.$background;
   max-width: 100%;
+  height: 100dvh;
   font-family: Josefin Sans;
+  padding: 60px 200px;
+  color: v.$secondary;
+  gap: 16px;
+  overflow: auto;
+  scrollbar-width: none;
 
-  &_legal-notice {
+  .wrapper {
     @include m.flex-center;
     flex-direction: column;
-    justify-content: center;
+    align-items: flex-start;
+    max-width: 1440px;
+    width: 100%;
+    gap: 16px;
+  }
+  &_legal-notice {
+    .textSpace {
+      padding-top: 20px;
+    }
+    ul {
+      padding-left: 17px;
+    }
+    a {
+      text-decoration: none;
+      color: v.$secondary;
+    }
     font-weight: 400;
+    font-style: regular;
+    line-height: 120%;
 
     h1 {
       color: v.$primary;
@@ -149,7 +181,7 @@
     }
     h2 {
       color: v.$primary;
-      font-size: 1rem;
+      font-size: 1.2rem;
     }
     p {
       color: v.$secondary;
@@ -171,6 +203,26 @@
     max-width: 1440px;
     @include m.flex-center;
     justify-content: space-between;
+    &_back_image {
+      width: 535px;
+      height: 600px;
+      position: relative;
+      background-image: url('/assets/fonts/images/icons/BG shape.svg');
+      background-repeat: no-repeat;
+      background-position: bottom;
+      background-size: contain;
+      &_person_img {
+        position: absolute;
+        z-index: 10;
+        width: 535px;
+        height: 600px;
+        left: 0px;
+        top: 0;
+      }
+    }
+    &_back_image:hover {
+      background-image: url('/assets/fonts/images/icons/hero_hover_back.svg');
+    }
   }
 
   &_img {
@@ -268,6 +320,7 @@
     justify-content: space-between;
     flex-direction: column;
     width: 100%;
+    padding-left: 100px;
   }
 }
 
@@ -291,7 +344,7 @@
     font-size: 1.8rem;
   }
   &_text_btn {
-    width: 40%;
+    width: 30%;
     text-align: justify;
   }
   &_text-color {
@@ -300,7 +353,7 @@
   &_blocks {
     @include m.flex-center;
     align-items: self-start;
-    justify-content: center;
+    //justify-content: center;
     margin-top: 80px;
   }
 
@@ -338,8 +391,7 @@
   &_layout {
     @include m.flex-center;
     flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 3rem;
+    justify-content: space-evenly;
     margin-top: 80px;
   }
 
@@ -471,21 +523,24 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: opacity 5s ease;
 
     &::before {
       content: '';
       position: absolute;
       inset: 0;
       background: url('/assets/fonts/images/icons/mySkillsBack.svg') no-repeat center / contain;
+      opacity: 1;
     }
 
-    &:nth-child(2)::before {
-      transform: rotate(90deg);
-    }
-    &:nth-child(3)::before {
-      transform: scaleX(-1);
+    &:hover {
+      &::before {
+        display: none;
+      }
+      background: url('/assets/fonts/images/icons/aboutmeHoverBack.svg') no-repeat center / contain;
     }
   }
+
   &_content {
     position: relative; // sits above the ::before layer
     width: 72%;
@@ -520,7 +575,7 @@
   font-family: Josefin Sans;
 
   input {
-    width: 445px;
+    width: 440px;
     height: 60px;
     border-radius: 30px;
     color: v.$secondary;
@@ -536,6 +591,10 @@
   &_wrapper {
     max-width: 1440px;
     width: 100%;
+    &_flexdiv {
+      @include m.flex-center;
+      justify-content: space-between;
+    }
   }
   &_align_info {
     @include m.flex-center;
@@ -644,13 +703,44 @@
   justify-content: center;
 }
 .projects {
+  @include m.flex-center;
+  flex-direction: column;
   font-family: Josefin Sans;
   color: v.$secondary;
   background-color: v.$background;
+  li {
+    list-style: none;
+    position: relative;
+    padding-left: 25px;
+    font-size: clamp(18px, calc(15.143px + 0.893vw), 28px);
+    font-weight: 400;
+    padding-top: 30px;
+    p {
+      padding-top: 16px;
+      font-size: clamp(14px, calc(12.857px + 0.357vw), 18px);
+      font-weight: 400;
+    }
+  }
 
+  li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 32px;
+    width: 16px;
+    height: 25px;
+    background-image: url('../../../public/assets/fonts/images/icons/bullet.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .wrapper {
+    max-width: 1440px;
+  }
   [ngTabs] {
     overflow: hidden;
     width: 100%;
+    padding-top: 80px;
   }
   [ngTabList] {
     padding: 0;
@@ -664,16 +754,16 @@
     padding: 2rem 0;
     cursor: pointer;
     text-align: center;
-    color: v.$secondary;
+    color: v.$primary;
     font-size: clamp(18px, calc(14.571px + 1.071vw), 30px);
   }
   [ngTab][aria-selected='false']:focus {
-    color: v.$secondary;
+    color: v.$primary;
     outline-offset: -8px;
     border-radius: 0.7rem;
   }
   [ngTab]:hover {
-    color: v.$primary;
+    color: v.$secondary;
   }
   [ngTab][aria-selected='true'] {
     color: v.$secondary;
@@ -689,38 +779,13 @@
       @include m.flex-center;
       justify-content: space-between;
       gap: 60px;
-      li {
-        list-style: none;
-        position: relative;
-        padding-left: 25px;
-        font-size: clamp(18px, calc(15.143px + 0.893vw), 28px);
-        font-weight: 400;
-        padding-top: 30px;
-        p{
-          padding-top: 16px;
-          font-size: clamp(14px, calc(12.857px + 0.357vw), 18px);
-          font-weight: 400;
-        }
-      }
-
-      li::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 32px;
-
-        width: 16px;
-        height: 25px;
-
-        background-image: url('../../../public/assets/fonts/images/icons/bullet.svg');
-        background-size: contain;
-        background-repeat: no-repeat;
-      }
+      padding: 0 3rem;
     }
     .information_project {
       @include m.flex-center;
       flex-direction: column;
       justify-content: center;
+      gap: 20px;
       &_logo {
         padding-top: 12px;
         @include m.flex-center;
@@ -737,7 +802,7 @@
     }
     .project1 {
       width: 450px;
-      height: 300px;
+      height: auto;
       object-fit: contain;
       border-radius: 30px;
     }
@@ -761,6 +826,5 @@
   [ngTabPanel]:focus {
     outline-offset: -4px;
     border-radius: 0.5rem;
-
   }
 }

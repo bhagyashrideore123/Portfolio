@@ -46,7 +46,7 @@
 </div> -->
 <div class="projects" id="projects">
     <h1>My Projects</h1>
-    <div ngTabs>
+    <div class="wrapper" ngTabs>
 
         <div ngTabList selectionMode="follow" selectedTab="project1">
             <div class="paddingClass" ngTab value="project1">1. El Pollo Loco</div>
@@ -57,19 +57,18 @@
                 <ng-template ngTabContent>
                 <div class="information">
                     <ul>
-                        <li>About the project <br>
-                            <p>A simple Jump-and-Run game based on an object-oriented approach. Help sharkie to find
-                                coins and poison bottles to fight against the killer whale.</p>
+                        <li>About the project &nbsp; <span>Duration: 3 weeks</span><br>
+                            <p>A simple Jump-and-Run game based on an object-oriented approach. Help pepe to find
+                                coins and bottles to fight against the Bigboss.</p>
                         </li>
                         <li>How I have organised my work process <br>
-                            <p>How do you keep your code clean and maintainable? Have you broken the project down into
-                                reusable modules or components? Focus on documentation, naming files, variables, classes
-                                and testing.</p>
+                            <p>I keep my code clean by using clear naming, organizing files properly, and breaking the project into reusable components and modules. I also add comments and documentation where needed and test my code regularly to make sure it stays reliable and easy to maintain.</p>
                         </li>
                         <li>What I have learnt <br>
-                            <p>As someone who is always trying to learn new technologies, you may have enjoyed working
-                                on this project because it allowed you to delve deep into a particular technology.
-                                Give details, such as the name of the framework or language you mean.</p>
+                            <p>I enjoyed working on this project because it gave me the opportunity to learn
+                                more about (game) development in JavaScript and improve my skills with 
+                                technologies like JavaScript, CSS and HTML. It helped me understand how these technologies can be used to build 
+                                more interactive and user-friendly games.</p>
                         </li>
                     </ul>
                     <div class="information_project">
@@ -80,11 +79,11 @@
                             <img class="logo" src="assets/fonts/images/icons/css.svg" alt="css_logo">
                         </div>
                         <div>
-                        <img class="project1" src="assets/fonts/images/photo/3ee31bbfc5058080da7d2d8f838a6bcdba4d4073.jpg" alt="project1_image">
+                        <img class="project1" src="assets/fonts/images/photo/el-polo-loco.jpg" alt="project1_image">
                         </div>
                         <div class="information_project_button">
-                            <button class="button_primary">Live Test</button>
-                            <button class="button_primary">Github</button>
+                            <button class="button_primary"><a target="_blank" href="https://bhagyashrideore.developerakademie.net/El-Pollo-Loco/index.html">Live Test</a></button>
+                            <button class="button_primary"><a target="_blank"  href="https://github.com/bhagyashrideore123/El-Pollo-Loco">Github</a></button>
                         </div>
 
                     </div>
@@ -93,22 +92,42 @@
             </div>
             <div ngTabPanel [preserveContent]="true" value="project2">
                 <ng-template ngTabContent>
+                    <div class="information">
+                        <ul>
+                            <li>About the project &nbsp; <span>Duration: 2 months</span><br>
+                                <p>Task manager inspired by the Kanban System. Create and organize tasks using drag and drop
+                                    functions, assign users and categories. </p>
+                            </li>
+                            <li>How I have organised my work process <br>
+                                <p>I keep my code clean by using clear naming, organizing files
+                                    properly, and breaking the project into reusable components and 
+                                    modules. I also add comments and documentation where needed and 
+                                    test my code regularly to make sure it stays reliable and easy to 
+                                    maintain.</p>
+                            </li>
+                            <li>My group work experience<br>
+                                <p>The project was completed by a team of three, where we worked together 
+                                and shared responsibilities at a similar level. My role involved contributing to the development, implementing features, 
+                                and cooperating with the team to keep the project moving smoothly.</p>
+                            </li>
+                        </ul>
+                        <div class="information_project">
+                            <p>Technologies</p>
+                            <div class="information_project_logo"> 
+                                <img class="logo" src="assets/fonts/images/icons/Icons.svg" alt="Angular_logo">
+                                <img class="logo" src="assets/fonts/images/icons/Icons (1).svg" alt="typescript_logo">
+                                <img class="logo" src="assets/fonts/images/icons/css.svg" alt="scss_logo">
+                            </div>
+                            <div>
+                            <img class="project1" src="assets/fonts/images/photo/62e8264cec23935b67722b1d20c384cc0d9065e4.png" alt="project1_image">
+                            </div>
+                            <div class="information_project_button">
+                                <button class="button_primary"><a href="">Live Test</a></button>
+                                <button class="button_primary"><a href="">Github</a></button>
+                            </div>
 
-                    <ul>
-                        <li>About the project <br>
-                            <p>Task manager inspired by the Kanban System. Create and organize tasks using drag and drop
-                                functions, assign users and categories. </p>
-                        </li>
-                        <li>How I have organised my work process <br>
-                            <p>How do you keep your code clean and maintainable? Have you broken the project down into
-                                reusable modules or components? Focus on documentation, naming files, variables, classes
-                                and testing.</p>
-                        </li>
-                        <li>My group work experience<br>
-                            <p>How many people were in the team and what was your role? Describe your tasks in 1-2
-                                sentences. It is nice to mention a good teamwork and cooperation.</p>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
                 </ng-template>
             </div>
         </div>

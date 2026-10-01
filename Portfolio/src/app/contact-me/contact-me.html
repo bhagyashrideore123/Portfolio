@@ -1,6 +1,15 @@
 <div class="contact" id="contact">
     <div class="contact_wrapper">
-        <h1>Contact me</h1>
+        <div class="contact_wrapper_flexdiv">
+        <!-- this empty h1 is for generating space -->
+            <h1></h1>
+            <h1>Contact me</h1>
+            <a href="#hero" aria-label="Scroll down">
+                <img class="hero_scroll-down" src="assets/fonts/images/icons/contact up arrow.svg"
+                    alt="up_arrow_image">
+            </a>
+        </div>
+
         <div class="contact_align_info">
             <section class="contact_para">
                 <p>Encourage people to contact you and describe what role you are interested in. Show that you will add
@@ -24,30 +33,30 @@
         <form [formGroup]="userForm" (ngSubmit)="formSubmit()" class="contact_form">
             <div class="contact_form_align_part1">
                 <div>
-                @if (userForm.controls['name'].touched || userForm.controls['name'].dirty) {
+                    @if (userForm.controls['name'].touched || userForm.controls['name'].dirty) {
                     @if(userForm.controls['name'].errors?.['required']){
-                        <span class="error">Your name is required</span><br>
+                    <span class="error">Your name is required</span><br>
                     }@else {
                     <label for="name">Your name </label><br>
                     }
-    
-                }@else {
+
+                    }@else {
                     <label for="name">Your name </label><br>
-                    } 
+                    }
                     <input id="name" type="text" formControlName="name" /><br>
                 </div>
                 <div>
                     @if (userForm.controls['email'].touched || userForm.controls['email'].dirty) {
-                        @if (userForm.controls['email'].errors?.['required']) {
-                        <span class="error">Your Email is required</span><br>
-                        } @else if (userForm.controls['email'].errors?.['pattern'] ||
-                        userForm.controls['email'].errors?.['email']) {
-                        <span class="error">Your email is not valid</span><br>
-                        } @else {
-                        <label for="email">Your Email</label><br>
-                        }
+                    @if (userForm.controls['email'].errors?.['required']) {
+                    <span class="error">Your Email is required</span><br>
+                    } @else if (userForm.controls['email'].errors?.['pattern'] ||
+                    userForm.controls['email'].errors?.['email']) {
+                    <span class="error">Your email is not valid</span><br>
                     } @else {
-                        <label for="email">Your Email</label><br>
+                    <label for="email">Your Email</label><br>
+                    }
+                    } @else {
+                    <label for="email">Your Email</label><br>
                     }
 
                     <input id="email" type="email" formControlName="email" /><br>
@@ -71,7 +80,7 @@
                     data as outlined.</label>
             </div>
             <div class="contact_form_button">
-            {{userForm.valid}}
+                {{userForm.valid}}
                 <button class="contact_form_sent_Btn" type="submit">Send</button>
             </div>
 
