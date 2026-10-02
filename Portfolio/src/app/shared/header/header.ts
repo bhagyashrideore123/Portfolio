@@ -1,10 +1,19 @@
-import { Component } from '@angular/core';
-import { RouterLink  } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { TranslateDirective, TranslatePipe, TranslateService } from '@ngx-translate/core';
 
 @Component({
-  imports: [RouterLink],
+  imports: [RouterLink, TranslatePipe, TranslateDirective],
   selector: 'app-header',
   styleUrl: './header.scss',
   templateUrl: './header.html',
 })
-export class Header {}
+export class Header {
+  private translate = inject(TranslateService);
+  english = 'EN';
+  german = 'DE';
+
+  useLanguage(language: string): void {
+    this.translate.use(language);
+  }
+}

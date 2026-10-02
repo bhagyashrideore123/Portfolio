@@ -1,0 +1,105 @@
+{
+  "hero": {
+    "role": "FRONTEND ENTWICKLERIN",
+    "logoRole": "entwicklerin"
+  },
+  "header": {
+    "why-me": "Warum ich",
+    "skills": "Fähigkeiten",
+    "projects": "Projekte",
+    "contact": "Kontakt",
+    "role": "entwicklerin"
+  },
+  "why_me": {
+    "title": "Warum ich",
+    "block_1": "Ich bin",
+    "block_1.1": " offen für Remote-Arbeit",
+    "block_2": "Ich bin eine Webentwicklerin, die einfache Ideen gerne in übersichtliche und funktionale Websites verwandelt. Ich lerne ständig Neues dazu und verbessere meine Fähigkeiten, um mit jedem Projekt bessere Erlebnisse zu schaffen. Für mich geht es nicht nur darum, Code zu schreiben, sondern etwas Nützliches zu entwickeln, das Menschen gerne nutzen.",
+    "button": "Lass uns reden"
+  },
+  "My_Skills": {
+    "title": "Meine Fähigkeiten",
+    "lerning": "Das lerne ich gerade",
+    "lerning_text": "Ich beschäftige mich aktuell mit React und Vue.js, um meine Frontend-Entwicklungsfähigkeiten zu erweitern und interaktivere Weberlebnisse zu schaffen. Ich lerne gerne neue Technologien und wende sie in echten Projekten an, während ich mich weiterentwickle."
+  },
+  "My_projects": {
+    "title": "Meine Projekte",
+    "technologies": "Technologien",
+    "about1": "Über das Projekt",
+    "about1_text": "Ein einfaches Jump-and-Run-Spiel, das auf einem objektorientierten Ansatz basiert. Hilf Pepe, Münzen und Flaschen zu finden, um gegen den Bigboss zu kämpfen.",
+    "duration1": "Dauer: 3 Wochen",
+    "lerned1": "Was ich gelernt habe",
+    "lerned1_text": "Die Arbeit an diesem Projekt hat mir Spaß gemacht, da ich dabei mehr über die (Spiel-)Entwicklung in JavaScript lernen und meine Fähigkeiten in Technologien wie JavaScript, CSS und HTML verbessern konnte. Es hat mir geholfen zu verstehen, wie man mit diesen Technologien interaktivere und benutzerfreundlichere Spiele entwickeln kann.",
+    "button_1": "Live-Test",
+    "organised1": "Wie ich meinen Arbeitsprozess organisiert habe",
+    "organised1_text": "Ich halte meinen Code sauber, indem ich klare Benennungen verwende, Dateien ordentlich organisiere und das Projekt in wiederverwendbare Komponenten und Module aufteile. Außerdem füge ich bei Bedarf Kommentare und Dokumentation hinzu und teste meinen Code regelmäßig, damit er zuverlässig und leicht wartbar bleibt.",
+    "about2": "Über das Projekt",
+    "about2_text": "Ein Task-Manager, inspiriert vom Kanban-System. Erstelle und organisiere Aufgaben per Drag-and-Drop, weise Nutzer und Kategorien zu.",
+    "duration2": "Dauer: 3 Wochen",
+    "groupExp2": "Meine Erfahrung in der Gruppenarbeit",
+    "groupExp2_text": "Das Projekt wurde von einem Team aus drei Personen umgesetzt, wobei wir zusammengearbeitet und die Verantwortung zu ähnlichen Teilen geteilt haben. Meine Rolle umfasste die Mitarbeit an der Entwicklung, die Umsetzung von Funktionen und die Zusammenarbeit mit dem Team, damit das Projekt reibungslos voranging.",
+    "button_2": "Live-Test",
+    "organised2": "Wie ich meinen Arbeitsprozess organisiert habe",
+    "organised2_text": "Ich halte meinen Code sauber, indem ich klare Benennungen verwende, Dateien ordentlich organisiere und das Projekt in wiederverwendbare Komponenten und Module aufteile. Außerdem füge ich bei Bedarf Kommentare und Dokumentation hinzu und teste meinen Code regelmäßig, damit er zuverlässig und leicht wartbar bleibt."
+  },
+  "about_me": {
+    "project": "Projekt",
+    "linkedin": "LinkedIn-Profil",
+    "title": "Brauchen Sie eine Teamplayerin? Das sagen meine Kolleginnen und Kollegen über mich"
+  },
+  "contact": {
+    "contact_para": "Ermutigen Sie Besucher, Sie zu kontaktieren, und beschreiben Sie, an welcher Rolle Sie interessiert sind. Zeigen Sie, dass Sie durch Ihre Arbeit einen Mehrwert für deren Projekte schaffen. Beispiel: Melden Sie sich gerne bei mir mit Jobangeboten oder Möglichkeiten wie: ...",
+    "project": "Projekt",
+    "linkedin": "LinkedIn-Profil",
+    "title": "Kontaktieren Sie mich",
+    "your_name": "Ihr Name",
+    "your_name_required": "Ihr Name ist erforderlich",
+    "your_email": "Ihre E-Mail",
+    "your_email_required": "Ihre E-Mail ist erforderlich",
+    "your_email_pattern": "Ihre E-Mail ist ungültig",
+    "Your_message": "Ihre Nachricht",
+    "Your_Message_required": "Ihre Nachricht ist erforderlich",
+    "privacy1": "Ich habe die ",
+    "privacy2": "Datenschutzerklärung",
+    "privacy3": " gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
+    "send": "Senden"
+  },
+  "footer": {
+    "legal_notice": "Impressum",
+    "developer": "entwicklerin",
+    "title": "Brauchen Sie eine Teamplayerin? Das sagen meine Kolleginnen und Kollegen über mich"
+  },
+  "legal_Notice": {
+    "title": "Impressum",
+    "developer": "entwicklerin",
+    "Imprint": "Impressum",
+    "Exploring": "Das Board erkunden",
+    "Acceptance": "Annahme der Bedingungen",
+    "Acceptance_p1": "Durch den Zugriff auf und die Nutzung von ",
+    "Acceptance_p2": " (Produkt) erkennen Sie die folgenden Allgemeinen Geschäftsbedingungen sowie alle Richtlinien, Vorgaben oder Änderungen, die Ihnen von Zeit zu Zeit vorgelegt werden können, an und stimmen ihnen zu. Wir, die aufgeführten Studierenden, können die Bedingungen von Zeit zu Zeit ohne Vorankündigung aktualisieren oder ändern.",
+    "Portfolio": "Portfolio",
+    "scope": "Umfang und Eigentum des Produkts",
+    "scope1": " Das Design von ",
+    "scope2": " ist Eigentum der",
+    "scope3": ". Die unbefugte Nutzung, Vervielfältigung, Veränderung, Verbreitung oder Nachbildung des Designs ist strengstens untersagt.",
+    "scope_p1": " wurde im Rahmen eines studentischen Gruppenprojekts in einem Webentwicklungs-Bootcamp bei der",
+    "DA": " Developer Akademie GmbH",
+    "DA_1": "Developer Akademie",
+    "scope_p2": "Es dient Bildungszwecken und ist nicht für eine umfangreiche private oder geschäftliche Nutzung vorgesehen. Daher können wir keine durchgehende Verfügbarkeit, Zuverlässigkeit, Richtigkeit oder sonstige Qualität dieses Produkts garantieren.",
+    "disclamer": "Haftungsausschluss und Haftungsbeschränkung",
+    "disclamer1": " wird ohne jegliche ausdrückliche oder stillschweigende Gewährleistung bereitgestellt, einschließlich, aber nicht beschränkt auf die stillschweigenden Gewährleistungen der Marktgängigkeit, der Eignung für einen bestimmten Zweck und der Nichtverletzung von Rechten Dritter. In keinem Fall haften wir, die aufgeführten Studierenden, oder die",
+    "disclamer2": " für direkte, indirekte, zufällige, besondere, Folge- oder exemplarische Schäden, einschließlich, aber nicht beschränkt auf Schäden durch entgangenen Gewinn, Geschäfts- oder Firmenwert, Nutzungsausfall, Datenverlust oder sonstige immaterielle Verluste, selbst wenn wir auf die Möglichkeit solcher Schäden hingewiesen wurden, die sich aus der Nutzung oder Leistung von ",
+    "Indemnity": "Freistellung",
+    "Indemnity1": " Sie verpflichten sich, uns, die aufgeführten Studierenden, die ",
+    "Indemnity2": " sowie unsere verbundenen Unternehmen, Partner, leitenden Angestellten, Direktoren, Vertreter und Mitarbeiter von jeglichen Ansprüchen, Forderungen, Verlusten, Schäden, Kosten oder Haftungen (einschließlich angemessener Anwaltskosten) freizustellen und schadlos zu halten, die sich aus Ihrer Nutzung von ",
+    "Indemnity3": " und/oder Ihrem Verstoß gegen dieses Impressum ergeben.",
+    "questions": "Bei Fragen oder Mitteilungen kontaktieren Sie uns bitte unter ",
+    "use": "Nutzung des Produkts",
+    "use1": "ist ausschließlich für rechtmäßige Zwecke im Einklang mit allen geltenden Gesetzen und Vorschriften bestimmt. Jegliche Nutzung von ",
+    "use2": " für illegale Aktivitäten oder um eine andere Person zu belästigen, zu schädigen, zu bedrohen oder einzuschüchtern, ist strengstens untersagt. Sie sind allein verantwortlich für Ihre Interaktionen mit anderen Nutzern von ",
+    "rights": "Eigentumsrechte",
+    "rights1": " Abgesehen von dem Design, das Eigentum der ",
+    "rights2": " ist, behalten wir, die aufgeführten Studierenden, alle Eigentumsrechte an ",
+    "rights3": ", einschließlich aller damit verbundenen urheberrechtlich geschützten Materialien, Marken und sonstigen Eigentumsinformationen."
+  }
+}

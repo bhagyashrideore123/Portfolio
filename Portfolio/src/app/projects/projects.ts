@@ -1,8 +1,9 @@
 import {Tab, Tabs, TabList, TabPanel, TabContent} from '@angular/aria/tabs';
 import { Component } from '@angular/core';
+import { TranslateDirective, TranslatePipe, TranslateService } from '@ngx-translate/core';
 
 @Component({
-  imports: [Tabs, TabList, Tab, TabPanel, TabContent],
+  imports: [Tabs, TabList, Tab, TabPanel, TabContent, TranslatePipe, TranslateDirective],
   standalone: true,
   selector: 'app-projects',
   styleUrl: './projects.scss',

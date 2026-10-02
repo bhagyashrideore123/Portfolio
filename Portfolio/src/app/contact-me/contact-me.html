@@ -3,7 +3,7 @@
         <div class="contact_wrapper_flexdiv">
         <!-- this empty h1 is for generating space -->
             <h1></h1>
-            <h1>Contact me</h1>
+            <h1>{{'contact.title'|translate}}</h1>
             <a href="#hero" aria-label="Scroll down">
                 <img class="hero_scroll-down" src="assets/fonts/images/icons/contact up arrow.svg"
                     alt="up_arrow_image">
@@ -12,11 +12,7 @@
 
         <div class="contact_align_info">
             <section class="contact_para">
-                <p>Encourage people to contact you and describe what role you are interested in. Show that you will add
-                    value to
-                    their projects through your work.
-                    Example: Feel free to get in touch with job offers or opportunities such as: ...
-                </p>
+                <p>{{'contact.contact_para'|translate}}</p>
             </section>
             <section class="contact_para1">
                 <div class="contact_para1_email">
@@ -35,30 +31,30 @@
                 <div>
                     @if (userForm.controls['name'].touched || userForm.controls['name'].dirty) {
                     @if(userForm.controls['name'].errors?.['required']){
-                    <span class="error">Your name is required</span><br>
+                    <span class="error">{{'contact.your_name_required'|translate}}</span><br>
                     }@else {
-                    <label for="name">Your name </label><br>
+                    <label for="name">{{'contact.your_name'|translate}}</label><br>
                     }
 
                     }@else {
-                    <label for="name">Your name </label><br>
+                    <label for="name">{{'contact.your_name'|translate}}</label><br>
                     }
-                    <input id="name" type="text" formControlName="name" /><br>
+                    <input id="name" type="text" formControlName="name"/><br>
                 </div>
                 <div>
+                    {{userForm.valid}}
                     @if (userForm.controls['email'].touched || userForm.controls['email'].dirty) {
                     @if (userForm.controls['email'].errors?.['required']) {
-                    <span class="error">Your Email is required</span><br>
+                    <span class="error">{{'contact.your_email_required'|translate}}</span><br>
                     } @else if (userForm.controls['email'].errors?.['pattern'] ||
                     userForm.controls['email'].errors?.['email']) {
-                    <span class="error">Your email is not valid</span><br>
+                    <span class="error">{{'contact.your_email_pattern'|translate}}</span><br>
                     } @else {
-                    <label for="email">Your Email</label><br>
+                    <label for="email">{{'contact.your_email'|translate}}</label><br>
                     }
                     } @else {
-                    <label for="email">Your Email</label><br>
+                    <label for="email">{{'contact.your_email'|translate}}</label><br>
                     }
-
                     <input id="email" type="email" formControlName="email" /><br>
                 </div>
             </div>
@@ -66,22 +62,21 @@
             <div class="contact_form_padding">
                 @if(userForm.controls['message'].errors?.['required'] && (userForm.controls['message'].touched ||
                 userForm.controls['message'].dirty)){
-                <span class="error">Your Message is required</span><br>
+                <span class="error">{{'contact.Your_Message_required'|translate}}</span><br>
                 }@else {
-                <label class="contact_form_message_label" for="message">Your Message </label><br>
+                <label class="contact_form_message_label" for="message">{{'contact.Your_message'|translate}}</label><br>
                 }
+              
                 <textarea class="contact_form_message_textarea" id="description" formControlName="message"
                     rows="5"></textarea>
             </div>
             <div class="contact_form_flexCheckdbox">
                 <input class="contact_form_checkbox" type="checkbox" name="policycheck" formControlName="policycheck"
                     id="policycheck">
-                <label for="policycheck">I've read the <a href="">privacy policy</a> and agree to the processing of my
-                    data as outlined.</label>
+                <label for="policycheck">{{'contact.privacy1'|translate}}<a href="">{{'contact.privacy2'|translate}}</a>{{'contact.privacy3'|translate}}</label>
             </div>
             <div class="contact_form_button">
-                {{userForm.valid}}
-                <button class="contact_form_sent_Btn" type="submit">Send</button>
+                <button class="contact_form_sent_Btn" type="submit">{{'contact.send'|translate}}</button>
             </div>
 
 

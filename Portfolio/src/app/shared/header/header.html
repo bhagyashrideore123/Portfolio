@@ -1,25 +1,25 @@
-
 <header class="main-header">
-<div class="main-header_wrapper">
-    <figure>
+    <div class="main-header_wrapper">
+        <figure>
             <img src="assets/fonts/images/icons/LogoDark.svg" alt="Logo icon">
             <figcaption class="flex_text_logo">
-                        <h5>B.Deore</h5>
-                        <p>developer</p>
+                <h5>B.Deore</h5>
+                <p>{{'header.role'|translate}}</p>
             </figcaption>
-    </figure>
- 
-    <div class="main-header_headerMenu_item main-header_flex">
-        <a href="#why-me" class="main-header_headerMenu_item">Why me</a>
-        <a href="#skills" class="main-header_headerMenu_item">Skills</a>
-        <a href="#projects" class="main-header_headerMenu_item">Projects</a>
-        <a href="#contact" class="main-header_headerMenu_item">Contact</a>
+        </figure>
 
-    </div>
-    <div>
-        <div>
-            <span class="main-header_active">DE</span><span class="main-header_active"> EN</span>           
+        <div class="main-header_headerMenu_item main-header_flex">
+            <a href="#why-me" class="main-header_headerMenu_item">{{'header.why-me' | translate}}</a>
+            <a href="#skills" class="main-header_headerMenu_item">{{'header.skills' | translate}}</a>
+            <a href="#projects" class="main-header_headerMenu_item">{{'header.projects' | translate}}</a>
+            <a href="#contact" class="main-header_headerMenu_item">{{'header.contact' | translate}}</a>
+
         </div>
-    </div>
+        <div>
+            <div>
+                <span (click)="useLanguage('de')" class="main-header_active">{{german}}</span><span
+                    (click)="useLanguage('en')" class="main-header_active"> {{english}}</span>
+            </div>
+        </div>
     </div>
 </header>

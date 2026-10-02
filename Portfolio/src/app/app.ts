@@ -5,7 +5,7 @@ import { Footer } from './shared/footer/footer';
 import { Hero } from './hero/hero';
 
 @Component({
-  imports: [RouterOutlet,Header,Footer,Hero],
+  imports: [RouterOutlet, Header, Footer, Hero],
   selector: 'app-root',
   styleUrl: './app.scss',
   templateUrl: './app.html',

@@ -1,0 +1,108 @@
+@use '../../../public/assets/styles';
+
+
+.mySkills {
+  @include styles.flex-center;
+  background-color: styles.$background;
+  flex-direction: column;
+  width: 100%;
+  color: styles.$secondary;
+  padding: 100px 2rem 60px;
+  font-family: Josefin Sans;
+
+  &_wrapper {
+    width: 100%;
+    max-width: 1440px;
+  }
+  &_layout {
+    @include styles.flex-center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 80px;
+  }
+
+  &_gridWrapper {
+    flex: 2 1 420px;
+    max-width: 520px; // caps the width so it can't spread into one long row
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); // 4 equal columns, like your design
+    gap: 40px 24px; // row gap, column gap
+    justify-items: center;
+  }
+  &_item {
+    @include styles.flex-center;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center; // lets "Material Design" wrap onto two lines
+
+    img {
+      width: clamp(44px, 5vw, 64px);
+    } // same icon size for every skill
+  }
+  &_circle {
+    position: relative;
+    flex: 1 1 300px; // smaller share, min 300px
+    max-width: 420px;
+    aspect-ratio: 1; // box scales with width, so no fixed height
+    display: flex;
+    align-items: center; // centers the text, no top/left pixels
+    justify-content: center;
+
+    &::before {
+      // blob on its own layer, behind the text
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('/assets/fonts/images/icons/mySkillsBack.svg') no-repeat center / contain;
+    }
+  }
+  &_circle_text {
+    position: relative; // sits above the ::before layer
+    width: 72%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: clamp(0.8rem, 1vw, 1rem);
+  }
+  &_LIcons {
+    // single underscore, now matches the HTML
+    @include styles.flex-center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 0.5rem 0;
+  }
+
+  &_Litem {
+    @include styles.flex-center;
+    flex-direction: column;
+    gap: 0.25rem;
+
+    img {
+      width: clamp(24px, 3vw, 32px);
+    }
+  }
+
+  &_Ltext {
+    margin: 0;
+    line-height: 1.5;
+  }
+  @media (max-width: 480px) {
+    &_circle {
+      aspect-ratio: auto;
+      padding: 2.5rem 1.5rem;
+    }
+  }
+  @media (max-width: 800px) {
+    &_gridWrapper {
+      grid-template-columns: repeat(3, 1fr);
+      max-width: 100%;
+    }
+  }
+  @media (max-width: 480px) {
+    &_gridWrapper {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}

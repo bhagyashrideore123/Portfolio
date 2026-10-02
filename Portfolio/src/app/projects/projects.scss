@@ -1,0 +1,134 @@
+@use '../../../public/assets/styles';
+
+
+:host {
+  font-family: Josefin Sans;
+  display: flex;
+  justify-content: center;
+}
+.projects {
+  @include styles.flex-center;
+  flex-direction: column;
+  font-family: Josefin Sans;
+  color: styles.$secondary;
+  background-color: styles.$background;
+  li {
+    list-style: none;
+    position: relative;
+    padding-left: 25px;
+    font-size: clamp(18px, calc(15.143px + 0.893vw), 28px);
+    font-weight: 400;
+    padding-top: 30px;
+    p {
+      padding-top: 16px;
+      font-size: clamp(14px, calc(12.857px + 0.357vw), 18px);
+      font-weight: 400;
+    }
+  }
+
+  li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 32px;
+    width: 16px;
+    height: 25px;
+    background-image: url('../../../public/assets/fonts/images/icons/bullet.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .wrapper {
+    max-width: 1440px;
+  }
+  [ngTabs] {
+    overflow: hidden;
+    width: 100%;
+    padding-top: 80px;
+  }
+  [ngTabList] {
+    padding: 0;
+    display: flex;
+    list-style: none;
+    position: relative;
+  }
+  [ngTab] {
+    flex: 1;
+    outline: none;
+    padding: 2rem 0;
+    cursor: pointer;
+    text-align: center;
+    color: styles.$primary;
+    font-size: clamp(18px, calc(14.571px + 1.071vw), 30px);
+  }
+  [ngTab][aria-selected='false']:focus {
+    color: styles.$primary;
+    outline-offset: -8px;
+    border-radius: 0.7rem;
+  }
+  [ngTab]:hover {
+    color: styles.$secondary;
+  }
+  [ngTab][aria-selected='true'] {
+    color: styles.$secondary;
+    background-color: styles.$projects_background;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+  }
+  .sliding-window {
+    width: 200%;
+    display: flex;
+    transition: transform 0.2s ease-in-out;
+    .information {
+      @include styles.flex-center;
+      justify-content: space-between;
+      gap: 60px;
+      padding: 0 3rem;
+    }
+    .information_project {
+      @include styles.flex-center;
+      flex-direction: column;
+      justify-content: center;
+      gap: 20px;
+      &_logo {
+        padding-top: 12px;
+        @include styles.flex-center;
+        gap: 30px;
+      }
+      &_button {
+        @include styles.flex-center;
+        gap: 30px;
+      }
+    }
+    .logo {
+      width: 32px;
+      height: 36px;
+    }
+    .project1 {
+      width: 450px;
+      height: auto;
+      object-fit: contain;
+      border-radius: 30px;
+    }
+  }
+
+  [ngTabPanel] {
+    flex: 0 0 50%;
+    box-sizing: border-box;
+    padding: 1rem;
+    min-height: 100px;
+    background-color: styles.$projects_background;
+  }
+
+  [ngTabList]:has([ngTab]:nth-child(1)[aria-selected='true']) ~ .sliding-window {
+    transform: translateX(0);
+  }
+
+  [ngTabList]:has([ngTab]:nth-child(2)[aria-selected='true']) ~ .sliding-window {
+    transform: translateX(-50%);
+  }
+  [ngTabPanel]:focus {
+    outline-offset: -4px;
+    border-radius: 0.5rem;
+  }
+}

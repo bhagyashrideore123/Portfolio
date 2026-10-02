@@ -1,15 +1,15 @@
 <article class="aboutme">
 <div class="aboutme_wrapper">
-    <h2>Need a teamplayer? Here’s what my colleagues say about me</h2>
+    <h2>{{'about_me.title'|translate}}</h2>
 
     <div class="aboutme_grid">
         @for (a of aboutmeData; track a.name) {
         <div class="aboutme_card">
             <div class="aboutme_content">
             <h3>{{ a.name }}</h3>
-            <p class="aboutme_project">Project <span>{{ a.project }}</span></p>
+            <p class="aboutme_project">{{'about_me.project'|translate}} <span>{{ a.project }}</span></p>
             <blockquote>“{{ a.quote }}”</blockquote>
-            <a [href]="a.linkedin" target="_blank" rel="">Linked In Profile</a>
+            <a [href]="a.linkedin" target="_blank" rel="">{{'about_me.linkedin'|translate}}</a>
             </div>
         </div>
         }

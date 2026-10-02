@@ -1,0 +1,63 @@
+@use '../../../../public/assets/styles';
+
+.main-footer {
+  @include styles.flex-center;
+  flex-direction: column;
+  max-width: 100%;
+  width: 100%;
+  padding: 80px 80px;
+  background-color: styles.$header_footer_back;
+  font-family: Josefin Sans;
+  font-size: 1.2rem;
+
+  &_wrapper {
+    @include styles.flex-center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1440px;
+  }
+
+  figure {
+    @include styles.flex-center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    .flex_text_logo {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+    h5 {
+      color: styles.$secondary;
+      font-family: Anta;
+    }
+    p {
+      color: styles.$background;
+      font-family: Anta;
+    }
+  }
+
+  &_text {
+    p {
+      padding-top: 16px;
+    }
+  }
+  a,
+  p {
+    text-decoration: none;
+    color: styles.$background;
+}
+  h5 {
+    color: styles.$secondary;
+}
+  a:hover {
+    color: styles.$secondary;
+}
+&_iconAlign {
+    @include styles.flex-center;
+    gap: 16px;
+    justify-content: space-between;
+}
+}

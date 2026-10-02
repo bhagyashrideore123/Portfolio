@@ -1,0 +1,131 @@
+@use '../../../public/assets/styles';
+
+.hero {
+    background-color: styles.$background;
+    padding: 40px 120px 0px 120px;
+    justify-content: center;
+
+  &_wrapper {
+    max-width: 1440px;
+    @include styles.flex-center;
+    justify-content: space-between;
+    &_back_image {
+      width: 535px;
+      height: 600px;
+      position: relative;
+      background-image: url('/assets/fonts/images/icons/BG shape.svg');
+      background-repeat: no-repeat;
+      background-position: bottom;
+      background-size: contain;
+      &_person_img {
+        position: absolute;
+        z-index: 10;
+        width: 535px;
+        height: 600px;
+        left: 0px;
+        top: 0;
+      }
+    }
+    &_back_image:hover {
+      background-image: url('/assets/fonts/images/icons/hero_hover_back.svg');
+    }
+  }
+
+  &_img {
+    width: 66px;
+    height: 73px;
+  }
+  h1 {
+    font-size: clamp(1.75rem, 5vw, 5.5rem);
+    font-weight: 400;
+    color: styles.$secondary;
+  }
+  h5 {
+    color: styles.$secondary;
+    font-weight: 400;
+    font-size: 1rem;
+    font-family: Anta;
+  }
+  p {
+    color: styles.$secondary;
+    font-size: clamp(1.25rem, 2.5vw, 2.5rem);
+    font-family: Anta;
+  }
+  &_back {
+    position: relative;
+    bottom: -30px;
+    height: 683px;
+    width: 100%;
+    // background-image: url('../../../public/assets/fonts/images/icons/primary_shape_person.svg');
+    // background-repeat: no-repeat;
+    // background-position: bottom;
+    // background-size: contain;
+  }
+  &_back:hover {
+    background-image: url('../../../public/assets/fonts/images/icons/secondary_shape_person.svg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+  }
+  &_person_img {
+    position: absolute;
+    bottom: 0px;
+    left: 300px;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    object-fit: contain;
+  }
+  figure {
+    @include styles.flex-center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  &_row_align {
+    @include styles.flex-center;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    .logoTxt {
+      font-size: 1rem;
+      color: styles.$primary;
+    }
+    .flex_text_logo {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  &_social-icons {
+    @include styles.flex-center;
+    flex-direction: column;
+    gap: 16px;
+    img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+  &_scroll-down {
+    padding: 10px 5px;
+    border: 1px solid styles.$primary;
+    border-radius: 30px;
+  }
+  &_scroll-down:hover {
+    cursor: pointer;
+    padding: 10px 5px;
+    border: 1px solid styles.$primary;
+    background-color: styles.$button_hover;
+    color: styles.$primary;
+  }
+  &_detail {
+    @include styles.flex-center;
+    gap: 100px;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+    padding-left: 100px;
+  }
+}

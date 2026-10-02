@@ -1,0 +1,57 @@
+@use '../../../public/assets/styles';
+
+.main_legalNotice {
+  @include styles.flex-center;
+  align-items: left;
+  flex-direction: column;
+  background: styles.$background;
+  max-width: 100%;
+  height: 100dvh;
+  font-family: Josefin Sans;
+  padding: 60px 200px;
+  color: styles.$secondary;
+  gap: 16px;
+  overflow: auto;
+  scrollbar-width: none;
+
+  .wrapper {
+    @include styles.flex-center;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 1440px;
+    width: 100%;
+    gap: 16px;
+  }
+  &_legal-notice {
+    .textSpace {
+      padding-top: 20px;
+    }
+    ul {
+      padding-left: 17px;
+    }
+    a {
+      text-decoration: none;
+      color: styles.$secondary;
+    }
+    font-weight: 400;
+    font-style: regular;
+    line-height: 120%;
+
+    h1 {
+      color: styles.$primary;
+      font-size: 2.2rem;
+    }
+    h2 {
+      color: styles.$primary;
+      font-size: 1.2rem;
+    }
+    p {
+      color: styles.$secondary;
+    }
+    section {
+      .textColor {
+        color: styles.$primary;
+      }
+    }
+  }
+}

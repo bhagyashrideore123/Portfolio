@@ -1,6 +1,6 @@
 <section class="mySkills" id="skills">
     <div class="mySkills_wrapper">
-        <h1>My Skills</h1>
+        <h1>{{'My_Skills.title'|translate}}</h1>
 
         <div class="mySkills_layout">
             <div class="mySkills_gridWrapper">
@@ -15,19 +15,19 @@
             </div>
             <div class="mySkills_circle">
                 <div class="mySkills_circle_text">
-                    <p>I am currently learning</p>
+                    <p>{{'My_Skills.lerning'|translate}}</p>
 
                     <div class="mySkills_LIcons">
                         @for (item of learning; track item.name) {
                         <div class="mySkills_Litem">
                             <img [src]="item.icon" [alt]="item.name">
-                            <p>{{ item.name }}</p>
+                            <p>{{item.name}}</p>
                         </div>
                         }
                     </div>
 
                     <p class="mySkills_Ltext">
-                        I’m currently exploring React and Vue.js to expand my frontend development skills and build more interactive web experiences. I enjoy learning new technologies and applying them to real projects as I grow.
+                        {{'My_Skills.lerning_text'|translate}}
                     </p>
                 </div>
 

@@ -1,0 +1,107 @@
+{
+  "hero": {
+    "role": "FRONTEND DEVELOPER",
+    "logoRole": "developer"
+  },
+  "header": {
+    "why-me": "Why me",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact",
+    "role": "developer"
+  },
+  "why_me": {
+    "title": "Why me",
+    "block_1": "I am",
+    "block_1.1": " open to work remote",
+    "block_2": "I’m a web developer who enjoys turning simple ideas into clean and functional websites. I’m always learning new things and improving my skills so I can create better experiences with every project. For me, it’s not just about writing code, but about building something useful that people enjoy using.",
+    "button": "Let's talk"
+  },
+  "My_Skills": {
+    "title": "My Skills",
+    "lerning": "I am currently learning",
+    "lerning_text": "I’m currently exploring React and Vue.js to expand my frontend development skills and build more interactive web experiences. I enjoy learning new technologies and applying them to real projects as I grow."
+  },
+  "My_projects": {
+    "title": "My Projects",
+    "technologies":"Technologies",
+    "about1": "About the project",
+    "about1_text": "A simple Jump-and-Run game based on an object-oriented approach. Help pepe to find coins and bottles to fight against the Bigboss.",
+    "duration1": "Duration: 3 weeks",
+    "lerned1": "What I have learnt",
+    "lerned1_text": "I enjoyed working on this project because it gave me the opportunity to learn more about (game) development in JavaScript and improve my skills with technologies like JavaScript, CSS and HTML. It helped me understand how these technologies can be used to build more interactive and user-friendly games.",
+    "button_1": "Live Test",
+    "organised1": "How I have organised my work process",
+    "organised1_text": "I keep my code clean by using clear naming, organizing files properly, and breaking the project into reusable components and modules. I also add comments and documentation where needed and test my code regularly to make sure it stays reliable and easy to maintain.",
+    "about2": "About the project",
+    "about2_text": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
+    "duration2": "Duration: 3 weeks",
+    "groupExp2": "My group work experience",
+    "groupExp2_text": "The project was completed by a team of three, where we worked together and shared responsibilities at a similar level. My role involved contributing to the development, implementing features, and cooperating with the team to keep the project moving smoothly.",
+    "button_2": "Live Test",
+    "organised2": "How I have organised my work process",
+    "organised2_text": "I keep my code clean by using clear naming, organizing files properly, and breaking the project into reusable components and modules. I also add comments and documentation where needed and test my code regularly to make sure it stays reliable and easy to maintain."
+  },
+   "about_me": {
+    "project":"Project",
+    "linkedin":"Linked In Profile",
+    "title": "Need a teamplayer? Here’s what my colleagues say about me"
+  },
+    "contact": {
+    "contact_para":"Encourage people to contact you and describe what role you are interested in. Show that you will add value to their projects through your work. Example: Feel free to get in touch with job offers or opportunities such as: ...",
+    "project":"Project",
+    "linkedin":"Linked In Profile",
+    "title": "Contact me",
+    "your_name":"Your name",
+    "your_name_required":"Your name is required",
+    "your_email":"Your Email",
+    "your_email_required":"Your Email is required",
+    "your_email_pattern":"Your email is not valid",
+    "Your_message":"Your Message",
+    "Your_Message_required":"Your Message is required",
+    "privacy1":"I've read the ",
+    "privacy2":"privacy policy",
+    "privacy3":" and agree to the processing of my data as outlined.",
+    "send":"Send"
+
+},
+    "footer": {
+    "legal_notice":"Legal notice",
+    "developer":"developer",
+    "title": "Need a teamplayer? Here’s what my colleagues say about me"
+},
+
+    "legal_Notice": {
+    "title":"Legal Notice",
+    "developer":"developer",
+    "Imprint":"Imprint",
+    "Exploring":"Exploring the Board",
+    "Acceptance":"Acceptance of terms",
+    "Acceptance_p1":"By accessing and using ",
+    "Acceptance_p2":" (Product), you acknowledge and agree to the following terms and conditions, and any policies, guidelines, or amendments thereto that may be presented to you from time to time. We, the listed students, may update or change the terms and conditions from time to time without notice.",
+    "Portfolio":"Portfolio",
+    "scope":"Scope and ownership of the product",
+    "scope1":" The design of ",
+    "scope2":" is owned by the",
+    "scope3":". Unauthorized use, reproduction, modification, distribution, or replication of the design is strictly prohibited.",
+    "scope_p1":" has been developed as part of a student group project in a web development bootcamp at the",
+    "DA":" Developer Akademie GmbH",
+    "DA_1":"Developer Akademie",
+    "scope_p2":"It has an educational purpose and is not intended for extensive personal and business usage. As such, we cannot guarantee consistent availability, reliability, accuracy, or any other aspect of quality regarding this product.",
+    "disclamer":"Disclaimer of warranties and limitation of liability",
+    "disclamer1":" is provided as is without warranty of any kind, whether express or implied, including but not limited to the implied warranties of merchantability, fitness for a particular purpose, and non-infringement. In no event will we, the listed students, or the",
+    "disclamer2":", be liable for any direct, indirect, incidental, special, consequential or exemplary damages, including but not limited to, damages for loss of profits, goodwill, use, data, or other intangible losses, even if we have been advised of the possibility of such damages, arising out of or in connection with the use or performance of ",
+    "Indemnity":"Indemnity",
+    "Indemnity1":" You agree to indemnify, defend and hold harmless us, the listed students, the ",
+    "Indemnity2":", and our affiliates, partners, officers, directors, agents, and employees, from and against any claim, demand, loss, damage, cost, or liability (including reasonable legal fees) arising out of or in relating to your use of ",
+    "Indemnity3":" and/or your breach of this Legal Notice.",
+    "questions":"For any questions or notices, please contact us at ",
+    "use":"Use of the product",
+    "use1":"is intended to be used for lawful purposes only, in accordance with all applicable laws and regulations. Any use of ",
+    "use2":" for illegal activities, or to harass, harm, threaten, or intimidate another person, is strictly prohibited. You are solely responsible for your interactions with other users of ",
+    "rights":"Proprietary rights",
+    "rights1":" Aside from the design owned by ",
+    "rights2":", we, the listed students, retain all proprietary rights in ",
+    "rights3":", including any associated copyrighted material, trademarks, and other proprietary information."
+}
+}

@@ -1,0 +1,135 @@
+@use '../../../public/assets/styles';
+
+
+.contact {
+  @include styles.flex-center;
+  justify-content: center;
+  background-color: styles.$background;
+  flex-direction: column;
+  width: 100%;
+  color: styles.$secondary;
+  padding: 100px;
+  font-family: Josefin Sans;
+
+  input {
+    width: 440px;
+    height: 60px;
+    border-radius: 30px;
+    color: styles.$secondary;
+    border: 1px solid styles.$button_border;
+    background-color: styles.$background;
+    text-indent: 25px; //it decides from which point cursor start writing
+  }
+
+  input:hover {
+    background-color: styles.$button_hover;
+  }
+
+  &_wrapper {
+    max-width: 1440px;
+    width: 100%;
+    &_flexdiv {
+      @include styles.flex-center;
+      justify-content: space-between;
+    }
+  }
+  &_align_info {
+    @include styles.flex-center;
+    justify-content: center;
+    gap: 30px;
+    padding-top: 80px;
+  }
+  &_para {
+    max-width: 550px;
+  }
+  &_para1 {
+    max-width: 550px;
+    &_email,
+    &_tel {
+      @include styles.flex-center;
+      justify-content: flex-start;
+      gap: 20px;
+    }
+    &_email:hover,
+    &_tel:hover {
+      color: styles.$primary;
+      cursor: pointer;
+    }
+  }
+  &_form {
+    @include styles.flex-center;
+    flex-direction: column;
+    padding-top: 50px;
+
+    &_align_part1 {
+      @include styles.flex-center;
+      justify-content: center;
+      gap: 20px;
+      label {
+        color: styles.$primary;
+      }
+    }
+    &_padding {
+      padding-top: 20px;
+    }
+    &_message_input {
+      width: 100%;
+      color: styles.$primary;
+    }
+    &_message_label {
+      color: styles.$primary;
+    }
+    &_message_textarea {
+      scrollbar-width: none;
+      width: 900px;
+      max-width: 900px;
+      min-width: 900px;
+      color: styles.$secondary;
+      border: 1px solid styles.$button_border;
+      background-color: styles.$background;
+      border-radius: 30px;
+      height: 164px;
+      text-indent: 25px;
+      padding-top: 20px;
+    }
+    &_message_textarea:hover {
+      background-color: styles.$button_hover;
+    }
+    &_sent_Btn:disabled {
+      border: 1px solid styles.$button_disabled;
+      background-color: styles.$background;
+      color: styles.$button_disabled;
+      float: right;
+    }
+    &_sent_Btn {
+      padding: 13px 30px;
+      border-radius: 30px;
+      border: 1px solid styles.$primary;
+      background-color: styles.$background;
+      color: styles.$primary;
+      float: right;
+    }
+    &_flexCheckdbox {
+      @include styles.flex-center;
+      gap: 10px;
+      justify-content: flex-start;
+      width: 900px;
+      p {
+        width: 850px;
+      }
+      a {
+        color: styles.$primary;
+        text-decoration: none;
+      }
+    }
+    &_checkbox {
+      width: 20px !important;
+      border-radius: 100% !important;
+    }
+    &_button {
+      @include styles.flex-center;
+      width: 900px;
+      justify-content: flex-end;
+    }
+  }
+}

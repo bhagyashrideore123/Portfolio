@@ -1,2 +1,76 @@
-@use '../../../styles.scss'
+@use '../../../../public/assets/styles';
 
+.main-header {
+    @include styles.flex-center;
+    width: 100%;
+    background-color: styles.$header_footer_back;
+    position: sticky;
+    top: 0;
+    flex: 1;
+    z-index: 10;
+    gap: 197px;
+    cursor: pointer;
+    height: 104px;
+    justify-content: center;
+    font-size: clamp(16px, 1.5rem + 1stylesw, 26px);
+
+    figure {
+    @include styles.flex-center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    .flex_text_logo {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    h5 {
+        color: styles.$secondary;
+        font-family: Anta;
+    }
+    p {
+        color: styles.$background;
+        font-family: Anta;
+    }
+    }
+
+    &_wrapper {
+    @include styles.flex-center;
+    max-width: 1440px;
+    justify-content: space-between;
+    gap: 200px;
+    }
+    &_logo {
+    width: 58px;
+    height: 72px;
+    }
+    &_headerMenu_item {
+    @include styles.flex-center;
+    flex-direction: row;
+    gap: 90px;
+    color: styles.$background;
+    justify-content: center;
+    text-decoration: none;
+    font-family: Josefin Sans;
+    }
+    &_headerMenu_item:hostyleser {
+    color: styles.$secondary;
+    cursor: pointer;
+    text-decoration: none;
+    background-image: url('/assets/fonts/images/icons/menu-background.sstylesg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: costyleser;
+    z-index: 100;
+    }
+
+  &_actistylese {
+    font-family: Josefin Sans;
+  }
+  &_actistylese:hostyleser {
+    color: styles.$secondary;
+    cursor: pointer;
+  }
+}

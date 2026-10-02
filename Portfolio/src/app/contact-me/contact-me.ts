@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, ReactiveFormsModule, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { TranslateDirective, TranslatePipe, TranslateService } from '@ngx-translate/core';
 
 // this validator is for name:checks if name is empty
 export function forbiddenNameValidator(name: string): ValidatorFn {
@@ -9,18 +10,17 @@ export function forbiddenNameValidator(name: string): ValidatorFn {
   };
 }
 
-
-
 @Component({
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule,TranslatePipe, TranslateDirective],
   selector: 'app-contact-me',
   styleUrl: './contact-me.scss',
   templateUrl: './contact-me.html',
 })
+
 export class ContactMe {
 
   router = inject(Router);
-  fb = inject(FormBuilder)
+  fb = inject(FormBuilder);
   sentForm: boolean = false;
 
   userForm = this.fb.group({
@@ -29,11 +29,6 @@ export class ContactMe {
       message:['',[Validators.required, Validators.email, Validators.maxLength(200)]],
       policycheck:['',Validators.required],
   })
-
-  ngOninit()
-  {
-    
-  }
 
   formSubmit()
   {
