@@ -15,5 +15,8 @@ export class BurgerMenu {
 
   useLanguage(language: string): void {
     this.translate.use(language);
+    // document.getElementById("burgerMenu")?.style.display = "none";
   }
+
+  
 }

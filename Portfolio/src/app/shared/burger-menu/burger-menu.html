@@ -1,4 +1,4 @@
-<div class="burger_overlay">
+<div class="burger_overlay" id="burgerMenu">
   <nav class="burger_overlay_nav">
      <a href="#why-me" class="main-header_headerMenu_item">{{'header.why-me' | translate}}</a>
             <a href="#skills" class="main-header_headerMenu_item">{{'header.skills' | translate}}</a>
@@ -7,7 +7,7 @@
   </nav>
 
   <div class="burger_overlay_lang">
-    <span>DE</span>
-    <span>EN</span>
+    <span (click)="useLanguage('de')">DE</span>
+    <span (click)="useLanguage('en')">EN</span>
   </div>
 </div>

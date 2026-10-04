@@ -27,6 +27,7 @@
 
         </div>
         <form [formGroup]="userForm" (ngSubmit)="formSubmit()" class="contact_form">
+        <p>Let us work together!</p>
             <div class="contact_form_align_part1">
                 <div>
                     @if (userForm.controls['name'].touched || userForm.controls['name'].dirty) {
@@ -81,6 +82,11 @@
 
 
         </form>
-
+        
     </div>
+
+<a href="#hero" aria-label="Scroll down">
+                <img class="contact_scroll-down2" src="assets/fonts/images/icons/contact up arrow.svg"
+                    alt="up_arrow_image">
+</a>
 </div>
