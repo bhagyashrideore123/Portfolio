@@ -1,33 +1,49 @@
 @use '../../../public/assets/styles';
 
 .hero {
-    background-color: styles.$background;
-    padding: 40px 120px 0px 120px;
-    justify-content: center;
+  background-color: styles.$background;
+  padding: 40px 100px 0px 100px;
+  justify-content: center;
+  height: calc(100dvh - #{styles.$header-height});
 
+  &_logo_responsive{
+    display: none;
+  }
   &_wrapper {
     max-width: 1440px;
     @include styles.flex-center;
     justify-content: space-between;
+
     &_back_image {
-      width: 535px;
-      height: 600px;
+      width: stretch;
+      height: 900px;
       position: relative;
       background-image: url('/assets/fonts/images/icons/BG shape.svg');
       background-repeat: no-repeat;
       background-position: bottom;
       background-size: contain;
+
+      transition: all 0.5s ease-in-out;
+
       &_person_img {
         position: absolute;
         z-index: 10;
-        width: 535px;
-        height: 600px;
-        left: 0px;
-        top: 0;
+        width: 600px;
+        height: 800px;
+        left: 50px;
+        bottom: 0px;
+        top: 66px;
       }
     }
     &_back_image:hover {
+      width: stretch;
+      height: 900px;
       background-image: url('/assets/fonts/images/icons/hero_hover_back.svg');
+      background-repeat: no-repeat;
+      background-position: bottom;
+      background-size: contain;
+      transition: all 0.5s ease-in-out;
+      z-index: 10;
     }
   }
 
@@ -35,8 +51,9 @@
     width: 66px;
     height: 73px;
   }
+ 
   h1 {
-    font-size: clamp(1.75rem, 5vw, 5.5rem);
+    font-size: clamp(3rem, calc(2.286rem + 3.571vw), 5.5rem);
     font-weight: 400;
     color: styles.$secondary;
   }
@@ -51,42 +68,24 @@
     font-size: clamp(1.25rem, 2.5vw, 2.5rem);
     font-family: Anta;
   }
-  &_back {
-    position: relative;
-    bottom: -30px;
-    height: 683px;
-    width: 100%;
-    // background-image: url('../../../public/assets/fonts/images/icons/primary_shape_person.svg');
-    // background-repeat: no-repeat;
-    // background-position: bottom;
-    // background-size: contain;
-  }
-  &_back:hover {
-    background-image: url('../../../public/assets/fonts/images/icons/secondary_shape_person.svg');
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: contain;
-  }
-  &_person_img {
-    position: absolute;
-    bottom: 0px;
-    left: 300px;
-    transform: translateX(-50%);
-    width: 100%;
-    height: 100%;
-    z-index: 10;
-    object-fit: contain;
-  }
+
   figure {
     @include styles.flex-center;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    img {
+      transition: transform 0.5s ease-in-out;
+    }
+    img:hover {
+      transition: transform 0.5s ease-in-out;
+      transform: scaleX(1.2);
+    }
   }
   &_row_align {
     @include styles.flex-center;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
     .logoTxt {
       font-size: 1rem;
@@ -102,12 +101,33 @@
   &_social-icons {
     @include styles.flex-center;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 16px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    .img1:hover {
+      //  email
+      gap: 16px;
+      content: url('/assets/fonts/images/icons/mail blue.svg');
+    }
+    .img2:hover {
+      // git
+      gap: 16px;
+      content: url('/assets/fonts/images/icons/githover1.svg');
+    }
+    .img3:hover {
+      //  linked
+      gap: 16px;
+      content: url('/assets/fonts/images/icons/linkedinhoverimg.svg');
+    }
     img {
       width: 30px;
       height: 30px;
     }
   }
+
   &_scroll-down {
     padding: 10px 5px;
     border: 1px solid styles.$primary;
@@ -127,5 +147,46 @@
     flex-direction: column;
     width: 100%;
     padding-left: 100px;
+    &-text {
+      p {
+        text-align: center;
+      }
+    }
   }
 }
+  @media screen and (min-width: 320px) and (max-width: 480px) {
+    .hero{
+      padding: 40px 40px;
+      figure {
+      display: none;
+    }
+    }
+    .hero_logo_responsive{
+      display: flex;
+      justify-content: space-between;
+      figure {
+            display: block;
+            text-align: center;
+            img{
+              width: 52px;
+              height: 38px;
+            }
+          }
+    }
+    .hero_wrapper {
+      flex-direction: column;
+    }
+    .hero_social-icons {
+      display: none;
+    }
+    .hero_detail {
+      padding: 0;
+    }
+    .hero_wrapper_back_image {
+      content: url('/assets/fonts/images/icons/responsive_person_hero.svg');
+      height: 370px;
+      width: 311px;
+      background: unset;
+    }
+   
+  }

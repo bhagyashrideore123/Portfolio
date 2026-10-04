@@ -13,6 +13,7 @@
     height: 104px;
     justify-content: center;
     font-size: clamp(16px, 1.5rem + 1stylesw, 26px);
+    font-family: Josefin Sans;
 
     figure {
     @include styles.flex-center;
@@ -55,22 +56,25 @@
     text-decoration: none;
     font-family: Josefin Sans;
     }
-    &_headerMenu_item:hostyleser {
+    &_headerMenu_item:hover {
     color: styles.$secondary;
     cursor: pointer;
     text-decoration: none;
-    background-image: url('/assets/fonts/images/icons/menu-background.sstylesg');
+    background-image: url('/assets/fonts/images/icons/menu-background.svg');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: costyleser;
+    background-size: contain;
     z-index: 100;
     }
 
-  &_actistylese {
-    font-family: Josefin Sans;
-  }
-  &_actistylese:hostyleser {
+  &_active:hover {
     color: styles.$secondary;
     cursor: pointer;
   }
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    display: none;
 }
+
+ 
+}
+ 

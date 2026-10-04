@@ -1,0 +1,11 @@
+@use '../../../../public/assets/styles';
+
+.burger_overlay{
+    @include styles.flex-center;
+    width: 353px;
+    height: 370px;
+    background-image: url('/assets/fonts/images/icons/burgermenu.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}

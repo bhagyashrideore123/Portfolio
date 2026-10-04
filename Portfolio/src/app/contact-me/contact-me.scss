@@ -10,7 +10,18 @@
   color: styles.$secondary;
   padding: 100px;
   font-family: Josefin Sans;
-
+   &_scroll-down {
+    padding: 10px 5px;
+    border: 1px solid styles.$primary;
+    border-radius: 30px;
+  }
+  &_scroll-down:hover {
+    cursor: pointer;
+    padding: 10px 5px;
+    border: 1px solid styles.$primary;
+    background-color: styles.$button_hover;
+    color: styles.$primary;
+  }
   input {
     width: 440px;
     height: 60px;

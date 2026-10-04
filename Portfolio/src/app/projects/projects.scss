@@ -8,6 +8,7 @@
 }
 .projects {
   @include styles.flex-center;
+  width: 100%;
   flex-direction: column;
   font-family: Josefin Sans;
   color: styles.$secondary;
