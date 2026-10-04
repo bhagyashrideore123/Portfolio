@@ -51,6 +51,60 @@
   }
 }
 
-  // @media screen and (max-width: 480px) {}
-// @media screen and (min-width: 481px) and (max-width: 768px){}
+@media screen and (max-width: 480px) {
+  .whyme{
+    padding: 20px;
+  }
+
+  .whyme_blocks {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:32px ;
+   
+  }
+  .whyme_letsTalk{
+    display: none;
+  }
+ .whyme_text{
+  width: 100%;
+   text-align: center;
+
+ }
+ .whyme_text_btn{
+  width: 100%;
+   text-align: center;
+    p{
+    line-height: 140%;
+   }
+ }
+}
+ @media screen and (min-width: 481px) and (max-width: 768px){
+   .whyme{
+    padding: 40px;
+  }
+
+  .whyme_blocks {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:40px ;
+   
+  }
+  .whyme_letsTalk{
+    display: none;
+  }
+ .whyme_text{
+  width: 100%;
+   text-align: center;
+ }
+ .whyme_text_btn{
+  width: 100%;
+   text-align: center;
+  
+   p{
+    line-height: 140%;
+   }
+ }
+ }
 // @media screen and (min-width: 768px) and (max-width: 1024px){}

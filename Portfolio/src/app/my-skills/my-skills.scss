@@ -23,33 +23,32 @@
 
   &_gridWrapper {
     flex: 2 1 420px;
-    max-width: 520px; // caps the width so it can't spread into one long row
+    max-width: 520px; 
     display: grid;
-    grid-template-columns: repeat(4, 1fr); // 4 equal columns, like your design
-    gap: 40px 24px; // row gap, column gap
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 40px 24px;
     justify-items: center;
   }
   &_item {
     @include styles.flex-center;
     flex-direction: column;
     gap: 0.5rem;
-    text-align: center; // lets "Material Design" wrap onto two lines
-
+    text-align: center; 
     img {
       width: clamp(44px, 5vw, 64px);
-    } // same icon size for every skill
+    } 
   }
   &_circle {
     position: relative;
-    flex: 1 1 300px; // smaller share, min 300px
+    flex: 1 1 300px; 
     max-width: 420px;
-    aspect-ratio: 1; // box scales with width, so no fixed height
+    aspect-ratio: 1; 
     display: flex;
-    align-items: center; // centers the text, no top/left pixels
+    align-items: center; 
     justify-content: center;
 
     &::before {
-      // blob on its own layer, behind the text
+      
       content: '';
       position: absolute;
       inset: 0;
@@ -57,7 +56,7 @@
     }
   }
   &_circle_text {
-    position: relative; // sits above the ::before layer
+    position: relative; 
     width: 72%;
     text-align: center;
     display: flex;
@@ -67,7 +66,7 @@
     font-size: clamp(0.8rem, 1vw, 1rem);
   }
   &_LIcons {
-    // single underscore, now matches the HTML
+
     @include styles.flex-center;
     justify-content: center;
     gap: 1.5rem;
@@ -93,6 +92,9 @@
       aspect-ratio: auto;
       padding: 2.5rem 1.5rem;
     }
+    &_gridWrapper {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
   @media (max-width: 800px) {
     &_gridWrapper {
@@ -100,13 +102,82 @@
       max-width: 100%;
     }
   }
-  @media (max-width: 480px) {
-    &_gridWrapper {
-      grid-template-columns: repeat(2, 1fr);
+  @media (max-width: 600px) {
+    &_wrapper{
+    @include styles.flex-center;
+    flex-direction: column;
+    }
+  &_layout {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  
+  &_gridWrapper {
+     @include styles.flex-center;
+    max-width: 320px;
+    gap: 28px 28px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &_item_name {
+    display: none; 
+  }
+
+  
+  &_circle {
+    aspect-ratio: auto;
+    max-width: 100%;
+    padding: 0;
+
+    &::before {
+      display: none; 
     }
   }
+
+  &_circle_text {
+    width: 100%;
+    gap: 1rem;
+  }
+
+  &_LHeading {
+    color: styles.$primary;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  &_Ltext {
+    font-size: 0.9rem;
+  }
+
+  
+  &_LIcons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  &_Litem img {
+    width: 28px;
+  }
+
+  
+  &_talkBtn {
+    padding: 13px 30px;
+    border-radius: 30px;
+    border: 1px solid styles.$primary;
+    background-color: styles.$primary    ;
+    color: styles.$background;
+    float: right;
+    cursor: pointer;
+    text-decoration: none;
+  }
+}
 }
 
-  // @media screen and (max-width: 480px) {}
+//  @media screen and (max-width: 480px) {
+  
+//  }
 // @media screen and (min-width: 481px) and (max-width: 768px){}
 // @media screen and (min-width: 768px) and (max-width: 1024px){}
