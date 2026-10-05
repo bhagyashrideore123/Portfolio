@@ -62,7 +62,8 @@
     "privacy1": "Ich habe die ",
     "privacy2": "Datenschutzerklärung",
     "privacy3": " gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
-    "send": "Senden"
+    "send": "Senden",
+    "errorPOlicy":"Bitte akzeptieren Sie die Datenschutzerklärung."
   },
   "footer": {
     "legal_notice": "Impressum",

@@ -3,12 +3,12 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, ReactiveFormsModu
 import { Router } from '@angular/router';
 import { TranslateDirective, TranslatePipe, TranslateService } from '@ngx-translate/core';
 
-// this validator is for name:checks if name is empty
 export function forbiddenNameValidator(name: string): ValidatorFn {
-  return (control: AbstractControl): ValidationErrors | null => {    
-    return control.value == name ? {forbiddenName: {value: control.value}} : null;
+  return (control: AbstractControl): ValidationErrors | null => {
+   return control.value == name ? {forbiddenName: {value: control.value}} : null;
   };
 }
+
 
 @Component({
   imports: [ReactiveFormsModule,TranslatePipe, TranslateDirective],
@@ -24,20 +24,19 @@ export class ContactMe {
   sentForm: boolean = false;
 
   userForm = this.fb.group({
-      name:['',[Validators.required,forbiddenNameValidator(' ')]],
+      name:['',[Validators.required]],
       email:['',[Validators.required, Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')]] ,
-      message:['',[Validators.required, Validators.email, Validators.maxLength(200)]],
-      policycheck:['',Validators.required],
+      message:['',[Validators.required, Validators.maxLength(200)]],
+      policycheck:[false,Validators.requiredTrue,forbiddenNameValidator(" ")]
   })
 
   formSubmit()
   {
-    if(!this.userForm.invalid)
+    if(this.userForm.invalid)
     {
       console.log(this.userForm.value);
       this.router.navigate(['']);
     }
-  
   }
 
   formReset()
@@ -48,4 +47,6 @@ export class ContactMe {
   get email(){
     return this.userForm.get("email")
   }
+
+
 }

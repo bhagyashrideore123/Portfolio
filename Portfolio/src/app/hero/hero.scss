@@ -1,9 +1,12 @@
 @use '../../../public/assets/styles';
 
 .hero {
+   @include styles.flex-center;
+   justify-content: center;
   background-color: styles.$background;
   padding: 40px 100px 0px 100px;
   justify-content: center;
+  width: 100%;
   height: calc(100dvh - #{styles.$header-height});
 
   &_logo_responsive{
@@ -13,6 +16,7 @@
     max-width: 1440px;
     @include styles.flex-center;
     justify-content: space-between;
+    width: 100%;
 
     &_back_image {
       width: stretch;
@@ -32,7 +36,7 @@
         height: 800px;
         left: 50px;
         bottom: 0px;
-        top: 66px;
+        top: 92px;
       }
     }
     &_back_image:hover {

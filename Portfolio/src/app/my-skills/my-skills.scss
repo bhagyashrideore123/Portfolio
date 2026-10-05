@@ -1,6 +1,5 @@
 @use '../../../public/assets/styles';
 
-
 .mySkills {
   @include styles.flex-center;
   background-color: styles.$background;
@@ -9,7 +8,9 @@
   color: styles.$secondary;
   padding: 100px 2rem 60px;
   font-family: Josefin Sans;
-
+  &_talkBtn {
+    display: none;
+  }
   &_wrapper {
     width: 100%;
     max-width: 1440px;
@@ -23,9 +24,9 @@
 
   &_gridWrapper {
     flex: 2 1 420px;
-    max-width: 520px; 
+    max-width: 520px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr); 
+    grid-template-columns: repeat(4, 1fr);
     gap: 40px 24px;
     justify-items: center;
   }
@@ -33,22 +34,21 @@
     @include styles.flex-center;
     flex-direction: column;
     gap: 0.5rem;
-    text-align: center; 
+    text-align: center;
     img {
       width: clamp(44px, 5vw, 64px);
-    } 
+    }
   }
   &_circle {
     position: relative;
-    flex: 1 1 300px; 
+    flex: 1 1 300px;
     max-width: 420px;
-    aspect-ratio: 1; 
+    aspect-ratio: 1;
     display: flex;
-    align-items: center; 
+    align-items: center;
     justify-content: center;
 
     &::before {
-      
       content: '';
       position: absolute;
       inset: 0;
@@ -56,7 +56,7 @@
     }
   }
   &_circle_text {
-    position: relative; 
+    position: relative;
     width: 72%;
     text-align: center;
     display: flex;
@@ -66,7 +66,6 @@
     font-size: clamp(0.8rem, 1vw, 1rem);
   }
   &_LIcons {
-
     @include styles.flex-center;
     justify-content: center;
     gap: 1.5rem;
@@ -103,81 +102,77 @@
     }
   }
   @media (max-width: 600px) {
-    &_wrapper{
-    @include styles.flex-center;
-    flex-direction: column;
+    &_wrapper {
+      @include styles.flex-center;
+      flex-direction: column;
     }
-  &_layout {
-    flex-direction: column;
-    gap: 2.5rem;
-  }
+    &_layout {
+      flex-direction: column;
+      gap: 2.5rem;
+    }
 
-  
-  &_gridWrapper {
-     @include styles.flex-center;
-    max-width: 320px;
-    gap: 28px 28px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+    &_gridWrapper {
+      @include styles.flex-center;
+      max-width: 320px;
+      gap: 28px 28px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
 
-  &_item_name {
-    display: none; 
-  }
+    &_item_name {
+      display: none;
+    }
 
-  
-  &_circle {
-    aspect-ratio: auto;
-    max-width: 100%;
-    padding: 0;
+    &_circle {
+      aspect-ratio: auto;
+      max-width: 100%;
+      padding: 0;
 
-    &::before {
-      display: none; 
+      &::before {
+        display: none;
+      }
+    }
+
+    &_circle_text {
+      width: 100%;
+      gap: 1rem;
+    }
+
+    &_LHeading {
+      color: styles.$primary;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    &_Ltext {
+      font-size: 0.9rem;
+    }
+
+    &_LIcons {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    &_Litem img {
+      width: 28px;
+    }
+
+    &_talkBtn {
+      padding: 13px 30px;
+      border-radius: 30px;
+      border: 1px solid styles.$primary;
+      background-color: styles.$primary;
+      color: styles.$background;
+      float: right;
+      cursor: pointer;
+      text-decoration: none;
     }
   }
-
-  &_circle_text {
-    width: 100%;
-    gap: 1rem;
-  }
-
-  &_LHeading {
-    color: styles.$primary;
-    font-weight: 600;
-    margin: 0;
-  }
-
-  &_Ltext {
-    font-size: 0.9rem;
-  }
-
-  
-  &_LIcons {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-  }
-
-  &_Litem img {
-    width: 28px;
-  }
-
-  
-  &_talkBtn {
-    padding: 13px 30px;
-    border-radius: 30px;
-    border: 1px solid styles.$primary;
-    background-color: styles.$primary    ;
-    color: styles.$background;
-    float: right;
-    cursor: pointer;
-    text-decoration: none;
-  }
-}
 }
 
 //  @media screen and (max-width: 480px) {
-  
+
 //  }
 // @media screen and (min-width: 481px) and (max-width: 768px){}
 // @media screen and (min-width: 768px) and (max-width: 1024px){}

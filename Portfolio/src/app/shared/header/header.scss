@@ -1,53 +1,53 @@
 @use '../../../../public/assets/styles';
 
 .main-header {
-    @include styles.flex-center;
-    width: 100%;
-    background-color: styles.$header_footer_back;
-    position: sticky;
-    top: 0;
-    flex: 1;
-    z-index: 10;
-    gap: 197px;
-    cursor: pointer;
-    height: 104px;
-    justify-content: center;
-    font-size: clamp(16px, 1.5rem + 1stylesw, 26px);
-    font-family: Josefin Sans;
+  @include styles.flex-center;
+  width: 100%;
+  background-color: styles.$header_footer_back;
+  position: sticky;
+  top: 0;
+  flex: 1;
+  z-index: 10;
+  gap: 197px;
+  cursor: pointer;
+  height: 104px;
+  justify-content: center;
+  font-size: clamp(16px, 1.5rem + 1stylesw, 26px);
+  font-family: Josefin Sans;
 
-    figure {
+  figure {
     @include styles.flex-center;
     justify-content: center;
     flex-direction: column;
     align-items: center;
 
     .flex_text_logo {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
     }
     h5 {
-        color: styles.$secondary;
-        font-family: Anta;
+      color: styles.$secondary;
+      font-family: Anta;
     }
     p {
-        color: styles.$background;
-        font-family: Anta;
+      color: styles.$background;
+      font-family: Anta;
     }
-    }
+  }
 
-    &_wrapper {
+  &_wrapper {
     @include styles.flex-center;
     max-width: 1440px;
     justify-content: space-between;
     gap: 200px;
-    }
-    &_logo {
+  }
+  &_logo {
     width: 58px;
     height: 72px;
-    }
-    &_headerMenu_item {
+  }
+  &_headerMenu_item {
     @include styles.flex-center;
     flex-direction: row;
     gap: 90px;
@@ -55,37 +55,40 @@
     justify-content: center;
     text-decoration: none;
     font-family: Josefin Sans;
-    }
-    &_headerMenu_item:hover {
+    font-size: 26px;
+  }
+  a:hover {
+   
+    color: styles.$secondary;
+    // background-repeat: no-repeat;
+    // background-position: center;
+    // background-size: contain;
+    // background-image: url('/assets/fonts/images/icons/menu-background.svg');
+  }
+  &_active {
+    font-size: 26px;
+  }
+  &_active:hover {
     color: styles.$secondary;
     cursor: pointer;
-    text-decoration: none;
     background-image: url('/assets/fonts/images/icons/menu-background.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    z-index: 100;
-    }
-
-  &_active:hover {
-    color: styles.$secondary;
-    cursor: pointer;
   }
-
-
- 
 }
 @media screen and (max-width: 480px) {
-    .main-header {
-    display: none;}
+  .main-header {
+    display: none;
+  }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-.main-header_wrapper {
+  .main-header_wrapper {
     gap: 120px;
     font-size: 1.2rem;
-}
+  }
 }
 
-  // @media screen and (max-width: 480px) {}
+// @media screen and (max-width: 480px) {}
 // @media screen and (min-width: 481px) and (max-width: 768px){}
 // @media screen and (min-width: 768px) and (max-width: 1024px){}

@@ -10,6 +10,15 @@
   color: styles.$secondary;
   padding: 100px;
   font-family: Josefin Sans;
+ 
+
+  img.contact_input_check {
+    position: absolute;
+    right: 20px;
+    top: 60%;
+    transform: translateY(-50%);
+    width: 18px;
+  }
    &_scroll-down {
     padding: 10px 5px;
     border: 1px solid styles.$primary;
@@ -143,6 +152,7 @@
     &_checkbox {
       width: 20px !important;
       border-radius: 100% !important;
+     
     }
     &_button {
       @include styles.flex-center;

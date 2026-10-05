@@ -1,7 +1,7 @@
 <div class="contact" id="contact">
     <div class="contact_wrapper">
         <div class="contact_wrapper_flexdiv">
-        <!-- this empty h1 is for generating space -->
+            <!-- this empty h1 is for generating space -->
             <h1></h1>
             <h1>{{'contact.title'|translate}}</h1>
             <a href="#hero" aria-label="Scroll down">
@@ -27,30 +27,38 @@
 
         </div>
         <form [formGroup]="userForm" (ngSubmit)="formSubmit()" class="contact_form">
-        <p>Let us work together!</p>
+            <p>Let us work together!</p>
             <div class="contact_form_align_part1">
                 <div>
-                    @if (userForm.controls['name'].touched || userForm.controls['name'].dirty) {
-                    @if(userForm.controls['name'].errors?.['required']){
-                    <span class="error">{{'contact.your_name_required'|translate}}</span><br>
-                    }@else {
-                    <label for="name">{{'contact.your_name'|translate}}</label><br>
-                    }
+                    @if (userForm.controls['name'].touched ||
+                    userForm.controls['name'].dirty) {
 
+                    @if(userForm.controls['name'].errors?.['required']){
+                    <!-- <img class="contact_input_check" src="assets/fonts/images/icons/check.svg" alt=""> -->
+                    <span class="error stdError">{{'contact.your_name_required'|translate}}</span><br>
+                    }@else if(userForm.controls['name'].errors?.['forbiddenNameValidator']){
+
+                    }
+                    @else {
+                    <label for="name">{{'contact.your_name'|translate}}</label><br>
+                    }
                     }@else {
                     <label for="name">{{'contact.your_name'|translate}}</label><br>
                     }
-                    <input id="name" type="text" formControlName="name"/><br>
+                    <input id="name" forbiddenNameValidator=" " type="text" formControlName="name" /><br>
+
                 </div>
                 <div>
-                    {{userForm.valid}}
                     @if (userForm.controls['email'].touched || userForm.controls['email'].dirty) {
+                    <!-- <img class="contact_input_check" src="assets/fonts/images/icons/check.svg" alt=""> -->
                     @if (userForm.controls['email'].errors?.['required']) {
-                    <span class="error">{{'contact.your_email_required'|translate}}</span><br>
-                    } @else if (userForm.controls['email'].errors?.['pattern'] ||
+                    <span class="error stdError">{{'contact.your_email_required'|translate}}</span><br>
+                    }
+                    @else if (userForm.controls['email'].errors?.['pattern'] ||
                     userForm.controls['email'].errors?.['email']) {
-                    <span class="error">{{'contact.your_email_pattern'|translate}}</span><br>
-                    } @else {
+                    <span class="error stdError">{{'contact.your_email_pattern'|translate}}</span><br>
+                    }
+                    @else {
                     <label for="email">{{'contact.your_email'|translate}}</label><br>
                     }
                     } @else {
@@ -61,32 +69,54 @@
             </div>
 
             <div class="contact_form_padding">
-                @if(userForm.controls['message'].errors?.['required'] && (userForm.controls['message'].touched ||
-                userForm.controls['message'].dirty)){
-                <span class="error">{{'contact.Your_Message_required'|translate}}</span><br>
+                @if(userForm.controls['message'].touched ||
+                userForm.controls['message'].dirty){
+                <!-- <img class="contact_input_check" src="assets/fonts/images/icons/check.svg" alt=""> -->
+                @if(userForm.controls['message'].errors?.['required']){
+                <span class="error stdError">{{'contact.Your_Message_required'|translate}}</span><br>
+                }
                 }@else {
                 <label class="contact_form_message_label" for="message">{{'contact.Your_message'|translate}}</label><br>
                 }
-              
+
                 <textarea class="contact_form_message_textarea" id="description" formControlName="message"
                     rows="5"></textarea>
             </div>
             <div class="contact_form_flexCheckdbox">
+                @if(userForm.controls['policycheck'].touched || userForm.controls['policycheck'].dirty){
+                @if(userForm.controls['policycheck'].errors?.['required']){
                 <input class="contact_form_checkbox" type="checkbox" name="policycheck" formControlName="policycheck"
                     id="policycheck">
-                <label for="policycheck">{{'contact.privacy1'|translate}}<a href="">{{'contact.privacy2'|translate}}</a>{{'contact.privacy3'|translate}}</label>
+                <label for="policycheck">{{'contact.privacy1'|translate}}<a
+                        href="">{{'contact.privacy2'|translate}}</a>{{'contact.privacy3'|translate}}</label><br><br>
+                <span class="error stdError">{{'contact.errorPOlicy'|translate}}</span>
+                }@else {
+                <input class="contact_form_checkbox" type="checkbox" name="policycheck" formControlName="policycheck"
+                    id="policycheck">
+                <label for="policycheck">{{'contact.privacy1'|translate}}<a
+                        href="">{{'contact.privacy2'|translate}}</a>{{'contact.privacy3'|translate}}</label>
+                }
+                }@else {
+                <input class="contact_form_checkbox" type="checkbox" name="policycheck" formControlName="policycheck"
+                    id="policycheck">
+                <label for="policycheck">{{'contact.privacy1'|translate}}<a
+                        href="">{{'contact.privacy2'|translate}}</a>{{'contact.privacy3'|translate}}</label>
+                }
+                
+
             </div>
+
             <div class="contact_form_button">
-                <button class="contact_form_sent_Btn" type="submit">{{'contact.send'|translate}}</button>
+                <button [disabled]="userForm.invalid" class="contact_form_sent_Btn"
+                    type="submit">{{'contact.send'|translate}}</button>
             </div>
 
 
         </form>
-        
+
     </div>
 
-<a href="#hero" aria-label="Scroll down">
-                <img class="contact_scroll-down2" src="assets/fonts/images/icons/contact up arrow.svg"
-                    alt="up_arrow_image">
-</a>
+    <a href="#hero" aria-label="Scroll down">
+        <img class="contact_scroll-down2" src="assets/fonts/images/icons/contact up arrow.svg" alt="up_arrow_image">
+    </a>
 </div>

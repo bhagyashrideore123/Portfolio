@@ -59,6 +59,16 @@
     @include styles.flex-center;
     gap: 16px;
     justify-content: space-between;
+
+    .img1:hover{
+content: url('/assets/fonts/images/icons/gitHoverDesk.svg');
+    }
+    .img2:hover{
+content: url('/assets/fonts/images/icons/emailhoverdesk.svg');
+    }
+    .img3:hover{
+content: url('/assets/fonts/images/icons/linkedinHoverDesk.svg');
+    }
 }
 }
  @media screen and (max-width: 480px) {
