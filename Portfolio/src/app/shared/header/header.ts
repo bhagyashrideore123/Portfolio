@@ -16,4 +16,8 @@ export class Header {
   useLanguage(language: string): void {
     this.translate.use(language);
   }
+
+  setBurgerMenu(){
+    
+  }
 }

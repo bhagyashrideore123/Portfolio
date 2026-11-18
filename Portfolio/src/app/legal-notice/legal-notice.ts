@@ -2,10 +2,11 @@ import { DatePipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { Header } from '../shared/header/header';
 import { TranslateDirective, TranslatePipe, TranslateService } from '@ngx-translate/core';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
-  imports: [DatePipe,Header,TranslatePipe, TranslateDirective],
+  imports: [DatePipe, Header, TranslatePipe, TranslateDirective, RouterLink],
   selector: 'app-legal-notice',
   styleUrl: './legal-notice.scss',
   templateUrl: './legal-notice.html',

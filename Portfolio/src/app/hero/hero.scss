@@ -106,30 +106,35 @@
     @include styles.flex-center;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 16px;
     position: absolute;
     top: 0;
     right: 0;
+    .img1 ,.img2, .img3{
+      width: 30px;
+      height: 30px;
+    }
+    
+
     .img1:hover {
-      //  email
-      gap: 16px;
+      // gap: 16px;
+
       content: url('/assets/fonts/images/icons/mail blue.svg');
     }
     .img2:hover {
       // git
-      gap: 16px;
+      // gap: 16px;
+      
       content: url('/assets/fonts/images/icons/githover1.svg');
     }
     .img3:hover {
       //  linked
-      gap: 16px;
+      // gap: 16px;
+
       content: url('/assets/fonts/images/icons/linkedinhoverimg.svg');
     }
-    img {
-      width: 30px;
-      height: 30px;
-    }
+    
   }
 
   &_scroll-down {
@@ -198,15 +203,17 @@
     }
     .hero_detail {
       padding: 0;
+      gap: unset;
     }
     .hero_wrapper_back_image {
       content: url('/assets/fonts/images/icons/responsive_person_hero.svg');
       height: 370px;
       width: 311px;
       background: unset;
-      margin-top: 100px;
+      margin-top: 50px;
+    }
+    .hero_scroll-down{
+      margin-top: 30px;
     }
   }
-  // @media screen and (max-width: 480px) {}
-// @media screen and (min-width: 481px) and (max-width: 768px){}
-// @media screen and (min-width: 768px) and (max-width: 1024px){}
+  
