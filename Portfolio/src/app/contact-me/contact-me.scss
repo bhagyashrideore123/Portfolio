@@ -54,6 +54,7 @@
     &_flexdiv {
       @include styles.flex-center;
       justify-content: space-between;
+      margin-top: 15px;
     }
   }
   &_align_info {
