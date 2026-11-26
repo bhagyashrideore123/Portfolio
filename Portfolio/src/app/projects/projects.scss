@@ -1,11 +1,11 @@
 @use '../../../public/assets/styles';
 
-
 :host {
   font-family: Josefin Sans;
   display: flex;
   justify-content: center;
 }
+
 .projects {
   @include styles.flex-center;
   width: 100%;
@@ -13,7 +13,8 @@
   font-family: Josefin Sans;
   color: styles.$secondary;
   background-color: styles.$background;
-  padding: 115px 32px 60px; ;
+  padding: clamp(64px, 9vw, 115px) clamp(16px, 4vw, 32px) 60px; // was 115px 32px 60px
+
   li {
     list-style: none;
     position: relative;
@@ -41,12 +42,13 @@
   }
 
   .wrapper {
+    width: 100%; 
     max-width: 1440px;
   }
   [ngTabs] {
     overflow: hidden;
     width: 100%;
-    padding-top: 80px;
+    padding-top: clamp(32px, 6vw, 80px); 
   }
   [ngTabList] {
     padding: 0;
@@ -57,11 +59,11 @@
   [ngTab] {
     flex: 1;
     outline: none;
-    padding: 2rem 0;
+    padding: clamp(1rem, 2.5vw, 2rem) 0.5rem; 
     cursor: pointer;
     text-align: center;
     color: styles.$primary;
-    font-size: clamp(18px, calc(14.571px + 1.071vw), 30px);
+    font-size: clamp(14px, calc(10px + 1.4vw), 30px); 
   }
   [ngTab][aria-selected='false']:focus {
     color: styles.$primary;
@@ -77,29 +79,46 @@
     border-top-left-radius: 2rem;
     border-top-right-radius: 2rem;
   }
+
   .sliding-window {
-    width: 200%;
-    display: flex;
-    transition: transform 0.2s ease-in-out;
-    .information {
-      @include styles.flex-center;
-      justify-content: space-between;
-      gap: 60px;
-      padding: 0 3rem;
-    }
+      width: 200%;
+  display: flex;
+  transition: transform 0.2s ease-in-out;
+
+  .information {
+    @include styles.flex-center;
+    justify-content: space-between;
+    gap: clamp(24px, 5vw, 60px);
+    padding: 0 clamp(4px, 3vw, 3rem);
+  }                                     
+
+  .information > ul {                    
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .information_mobileHeader {            
+    display: none;
+  }
+
     .information_project {
       @include styles.flex-center;
-      flex-direction: column;
-      justify-content: center;
-      gap: 20px;
-      &_logo {
-        padding-top: 12px;
-        @include styles.flex-center;
-        gap: 30px;
-      }
-      &_button {
-        @include styles.flex-center;
-        gap: 30px;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        flex: 0 0 auto;
+        width: min(450px, 40%);
+      
+        &_logo {
+          padding-top: 12px;
+          @include styles.flex-center;
+          gap: 30px;
+        }
+      
+        &_button {
+          @include styles.flex-center;
+        flex-wrap: wrap; 
+        gap: 16px 30px;
       }
     }
     .logo {
@@ -108,6 +127,7 @@
     }
     .project1 {
       width: 450px;
+      max-width: 100%; 
       height: auto;
       object-fit: contain;
       border-radius: 30px;
@@ -116,6 +136,7 @@
 
   [ngTabPanel] {
     flex: 0 0 50%;
+    min-width: 0; 
     box-sizing: border-box;
     padding: 1rem;
     min-height: 100px;
@@ -125,7 +146,6 @@
   [ngTabList]:has([ngTab]:nth-child(1)[aria-selected='true']) ~ .sliding-window {
     transform: translateX(0);
   }
-
   [ngTabList]:has([ngTab]:nth-child(2)[aria-selected='true']) ~ .sliding-window {
     transform: translateX(-50%);
   }
@@ -133,33 +153,88 @@
     outline-offset: -4px;
     border-radius: 0.5rem;
   }
-}
-@media screen and (max-width: 480px) {
-.information{
-    display: flex;
-    flex-direction: column;
-}  
-}
-@media screen and (min-width: 481px) and (max-width: 768px){
-  .information{
-    display: flex;
-    flex-direction: column;
-  }
-  .project1{
-    width: 300px !important;
+
+  @media (max-width: 1024px) {
+    .sliding-window .information {
+      flex-direction: column;
     }
-}
-@media screen and (min-width: 768px) and (max-width: 1024px){
-  .information{
-    display: flex;
-    flex-direction: column;
+    .sliding-window .information > ul {
+    flex: none;
+    width: 100%;
+  }
+  .sliding-window .information_project {
+    width: 100%;
+    max-width: 450px;
+  }
+  }
+
+  
+ @media (max-width: 768px) {
+  [ngTabPanel] {
+    border-radius: 0 0 2rem 2rem;
+  }
+
+  .sliding-window {
+    .information {
+      align-items: stretch;
+      justify-content: flex-start;
+      gap: 24px;
+    }
+
+    // phone header: shown, and first in the column
+    .information_mobileHeader {
+      display: block;
+      order: 0;
+
+      h2 {
+        margin: 0 0 12px;
+        font-size: clamp(24px, calc(18px + 1.8vw), 32px);
+        font-weight: 400;
+        color: styles.$primary;          // the blue project name
+      }
+      p {
+        margin: 0 0 4px;
+        font-size: clamp(13px, calc(11px + 0.6vw), 16px);   // small text, like Figma
+        line-height: 1.5;
+      }
+    }
+
+    // the project block dissolves so its children can be ordered with the rest
+    .information_project {
+      display: contents;
+    }
+
+    // desktop-only pieces are hidden on phones
+    .information_project > p,
+    .information_project_logo,
+    .information_duration {
+      display: none;
+    }
+
+    // order from Figma: header, image, text sections, buttons
+    .information_project_image { order: 1; }
+    .information > ul { order: 2; margin: 0; padding: 0; }
+    .information_project_button { order: 3; justify-content: center; }
+
+    .project1 {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  // section titles blue with the bullet in front; the text below stays white
+  li {
+    padding-left: 0;
+    color: styles.$primary;
+  }
+  li p {
+    color: styles.$secondary;
+  }
+  li::before {
+    position: static;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 12px;
   }
 }
-
-
-
-
-
-// @media screen and (max-width: 480px) {}
-// @media screen and (min-width: 481px) and (max-width: 768px){}
-// @media screen and (min-width: 768px) and (max-width: 1024px){}
+}

@@ -9,6 +9,9 @@
   background-color: styles.$background;
   color: styles.$secondary;
   font-family: Josefin Sans;
+  &_project span {
+  color: styles.$primary;
+}
   h2 {
     color: styles.$primary;
     font-size: clamp(1.25rem, 2.5vw, 2rem);
@@ -18,6 +21,8 @@
     padding-top: 100px;
   }
   &_wrapper {
+      width: 100%;      
+      min-width: 0; 
     max-width: 1440px;
     justify-content: center;
     @include styles.flex-center;
@@ -83,7 +88,37 @@
       color: styles.$primary;
     }
   }
+  @media (max-width: 768px) {
+  
+      h2{
+        padding: 80px 20px 20px;
+        margin-bottom: unset;
+      }
+    
+  &_grid {
+    width: 100%;                  // the column wrapper centers its children, so the grid needs a full width to scroll
+    box-sizing: border-box;
+    flex-wrap: nowrap;            // one row instead of stacking
+    justify-content: flex-start;  // cards start at the left, like Figma
+    gap: 16px;
+    padding: 24px 16px;           // 16px at the left edge, like Figma
+    overflow-x: auto;             // swipe sideways
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 16px;
+    scrollbar-width: none;        // Figma shows no scrollbar
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &_card {
+    flex: 0 0 min(300px, 78vw);   // fixed card width; at 78vw the next card peeks in
+    scroll-snap-align: start;     // a swipe stops with a card at the left edge
+  }
+
+  &_content {
+    width: 76%;
+    text-align: center;             // Figma mobile text is left-aligned
+  }
 }
-// @media screen and (max-width: 480px) {}
-// @media screen and (min-width: 481px) and (max-width: 768px){}
-// @media screen and (min-width: 768px) and (max-width: 1024px){}
+}

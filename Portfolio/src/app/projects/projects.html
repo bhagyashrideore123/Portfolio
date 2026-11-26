@@ -1,4 +1,5 @@
-<div class="projects" id="projects">
+<!-- <div class="projects" id="projects">
+
     <h1>{{'My_projects.title'|translate}}</h1>
     <div class="wrapper" ngTabs>
 
@@ -28,8 +29,8 @@
                             <img class="logo" src="assets/fonts/images/icons/Icons (2).svg" alt="javascript_logo">
                             <img class="logo" src="assets/fonts/images/icons/css.svg" alt="css_logo">
                         </div>
-                        <div>
-                        <img class="project1" src="assets/fonts/images/photo/el-polo-loco.jpg" alt="project1_image">
+                        <div class="information_project_image">
+                            <img class="project1" src="assets/fonts/images/photo/el-polo-loco.jpg" alt="project1_image">
                         </div>
                         <div class="information_project_button">
                             <button class="button_primary"><a target="_blank" href="https://bhagyashrideore.developerakademie.net/El-Pollo-Loco/index.html">{{'My_projects.button_1'|translate}}</a></button>
@@ -65,10 +66,107 @@
                             <img class="project1" src="assets/fonts/images/photo/62e8264cec23935b67722b1d20c384cc0d9065e4.png" alt="project1_image">
                             </div>
                             <div class="information_project_button">
-                                <button class="button_primary"><a href="">{{'My_projects.button_1'|translate}}</a></button>
-                                <button class="button_primary"><a href="">Github</a></button>
+                                <button class="button_primary"><a target="_blank" href="https://join-3286.developerakademie.net/#/">{{'My_projects.button_1'|translate}}</a></button>
+                                <button class="button_primary"><a target="_blank" href="https://github.com/ogzA/join-team">Github</a></button>
                             </div>
 
+                        </div>
+                    </div>
+                </ng-template>
+            </div>
+        </div>
+
+    </div>
+</div> -->
+
+<div class="projects" id="projects">
+    <h1>{{'My_projects.title'|translate}}</h1>
+    <div class="wrapper" ngTabs>
+
+        <div ngTabList selectionMode="follow" selectedTab="project1">
+            <div class="paddingClass" ngTab value="project1">1. El Pollo Loco</div>
+            <div class="paddingClass" ngTab value="project2">2. Join</div>
+        </div>
+        <div class="sliding-window">
+
+            <!-- project 1 -->
+            <div ngTabPanel [preserveContent]="true" value="project1">
+                <ng-template ngTabContent>
+                <div class="information">
+
+                    <!-- phone only: name, technologies and duration as plain text -->
+                    <div class="information_mobileHeader">
+                        <h2>El Pollo Loco</h2>
+                        <p>{{'My_projects.technologies'|translate}}: HTML, JavaScript, CSS</p>
+                        <p>{{'My_projects.duration1'|translate}}</p>
+                    </div>
+
+                    <ul>
+                        <li>{{'My_projects.about1'|translate}} &nbsp; <span class="information_duration">{{'My_projects.duration1'|translate}}</span><br>
+                            <p>{{'My_projects.about1_text'|translate}}</p>
+                        </li>
+                        <li>{{'My_projects.organised1'|translate}}<br>
+                            <p>{{'My_projects.organised1_text'|translate}}</p>
+                        </li>
+                        <li>{{'My_projects.lerned1'|translate}}<br>
+                            <p>{{'My_projects.lerned1_text'| translate}}</p>
+                        </li>
+                    </ul>
+                    <div class="information_project">
+                        <p>{{'My_projects.technologies'| translate}}</p>
+                        <div class="information_project_logo">
+                            <img class="logo" src="assets/fonts/images/icons/Icons (3).svg" alt="html_logo">
+                            <img class="logo" src="assets/fonts/images/icons/Icons (2).svg" alt="javascript_logo">
+                            <img class="logo" src="assets/fonts/images/icons/css.svg" alt="css_logo">
+                        </div>
+                        <div class="information_project_image">
+                            <img class="project1" src="assets/fonts/images/photo/el-polo-loco.jpg" alt="project1_image">
+                        </div>
+                        <div class="information_project_button">
+                            <button class="button_primary"><a target="_blank" href="https://bhagyashrideore.developerakademie.net/El-Pollo-Loco/index.html">{{'My_projects.button_1'|translate}}</a></button>
+                            <button class="button_primary"><a target="_blank" href="https://github.com/bhagyashrideore123/El-Pollo-Loco">Github</a></button>
+                        </div>
+                    </div>
+                </div>
+                </ng-template>
+            </div>
+
+            <!-- project 2 -->
+            <div ngTabPanel [preserveContent]="true" value="project2">
+                <ng-template ngTabContent>
+                    <div class="information">
+
+                        <div class="information_mobileHeader">
+                            <h2>Join</h2>
+                            <p>{{'My_projects.technologies'|translate}}: Angular, TypeScript, SCSS</p>
+                            <p>{{'My_projects.duration2'|translate}}</p>
+                        </div>
+
+                        <ul>
+                            <li>{{'My_projects.about2'|translate}} &nbsp; <span class="information_duration">{{'My_projects.duration2'|translate}}</span><br>
+                                <p>{{'My_projects.about2_text'| translate}}</p>
+                            </li>
+                            <li>{{'My_projects.organised2'| translate}}<br>
+                                <p>{{'My_projects.organised2_text'| translate}}</p>
+                            </li>
+                            <li>{{'My_projects.groupExp2'| translate}}<br>
+                                <p>{{'My_projects.groupExp2_text'| translate}}</p>
+                            </li>
+                        </ul>
+                        <div class="information_project">
+                            <p>{{'My_projects.technologies'| translate}}</p>
+                            <div class="information_project_logo">
+                                <img class="logo" src="assets/fonts/images/icons/Icons.svg" alt="Angular_logo">
+                                <img class="logo" src="assets/fonts/images/icons/Icons (1).svg" alt="typescript_logo">
+                                <img class="logo" src="assets/fonts/images/icons/css.svg" alt="scss_logo">
+                            </div>
+                            <div class="information_project_image">
+                                <img class="project1" src="assets/fonts/images/photo/62e8264cec23935b67722b1d20c384cc0d9065e4.png" alt="project2_image">
+                            </div>
+                            <div class="information_project_button">
+                                <button class="button_primary"><a target="_blank" href="https://join-3286.developerakademie.net/#/">{{'My_projects.button_1'|translate}}</a></button>
+                                <button class="button_primary"><a target="_blank" href="https://github.com/ogzA/join-team">Github</a></button>
+                            </div>
                         </div>
                     </div>
                 </ng-template>

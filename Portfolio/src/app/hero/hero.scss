@@ -1,13 +1,14 @@
 @use '../../../public/assets/styles';
 
 .hero {
-   @include styles.flex-center;
-   justify-content: center;
+  @include styles.flex-center;
+  justify-content: center;
   background-color: styles.$background;
   padding: 40px 100px 0px 100px;
   justify-content: center;
   width: 100%;
-  height: calc(100dvh - #{styles.$header-height});
+  height: calc(100dvh - 104px);       
+  padding-top: 100px;
 
   &_logo_responsive{
     display: none;
@@ -19,35 +20,24 @@
     width: 100%;
 
     &_back_image {
-      width: stretch;
+      width: 100%;
       height: 900px;
       position: relative;
-      background-image: url('/assets/fonts/images/icons/BG shape.svg');
+      background-image: url('/assets/fonts/images/photo/avatar-default-without hover.svg');
       background-repeat: no-repeat;
       background-position: bottom;
       background-size: contain;
-
       transition: all 0.5s ease-in-out;
-
-      &_person_img {
-        position: absolute;
-        z-index: 10;
-        width: 600px;
-        height: 800px;
-        left: 50px;
-        bottom: 0px;
-        top: 92px;
-      }
     }
     &_back_image:hover {
-      width: stretch;
+      width: 100%;
       height: 900px;
-      background-image: url('/assets/fonts/images/icons/hero_hover_back.svg');
+      background-image: url('/assets/fonts/images/photo/avatar-default.svg');
       background-repeat: no-repeat;
       background-position: bottom;
       background-size: contain;
       transition: all 0.5s ease-in-out;
-      z-index: 10;
+      
     }
   }
 
@@ -206,11 +196,11 @@
       gap: unset;
     }
     .hero_wrapper_back_image {
-      content: url('/assets/fonts/images/icons/responsive_person_hero.svg');
-      height: 370px;
-      width: 311px;
-      background: unset;
-      margin-top: 50px;
+      // content: url('/assets/fonts/images/icons/responsive_person_hero.svg');
+      // height: 370px;
+      // width: 311px;
+      // background: unset;
+      // margin-top: 50px;
     }
     .hero_scroll-down{
       margin-top: 30px;

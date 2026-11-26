@@ -8,14 +8,17 @@
   color: styles.$secondary;
   padding: 100px 2rem 60px;
   font-family: Josefin Sans;
+
   &_talkBtn {
     display: none;
   }
+
   &_wrapper {
     width: 100%;
     max-width: 1440px;
     margin-top: 15px
   }
+
   &_layout {
     @include styles.flex-center;
     flex-wrap: wrap;
@@ -31,15 +34,25 @@
     gap: 40px 24px;
     justify-items: center;
   }
+
   &_item {
+    cursor: pointer;
     @include styles.flex-center;
     flex-direction: column;
     gap: 0.5rem;
     text-align: center;
+
     img {
       width: clamp(44px, 5vw, 64px);
     }
+
+    transition: transform .2s;
   }
+
+  &_item:hover {
+    transform: scale(1.1);
+  }
+
   &_circle {
     position: relative;
     flex: 1 1 300px;
@@ -55,14 +68,16 @@
       position: absolute;
       inset: 0;
       background: url('/assets/fonts/images/icons/mySkillsBack.svg') no-repeat center / contain;
-  
+      transition: all 0.3s ease-in-out;
     }
+
     &:hover::before {
-    
-    background-image: url('/assets/fonts/images/icons/myskills_hover.svg');
-    background-size: contain;
+      transition: all 0.3s ease-in-out;
+      background-image: url('/assets/fonts/images/icons/myskills_hover.svg');
+      background-size: contain;
     }
   }
+
   &_circle_text {
     position: relative;
     width: 72%;
@@ -73,6 +88,7 @@
     gap: 0.75rem;
     font-size: clamp(0.8rem, 1vw, 1rem);
   }
+
   &_LIcons {
     @include styles.flex-center;
     justify-content: center;
@@ -94,26 +110,31 @@
     margin: 0;
     line-height: 1.5;
   }
+
   @media (max-width: 480px) {
     &_circle {
       aspect-ratio: auto;
       padding: 2.5rem 1.5rem;
     }
+
     &_gridWrapper {
       grid-template-columns: repeat(2, 1fr);
     }
   }
+
   @media (max-width: 800px) {
     &_gridWrapper {
       grid-template-columns: repeat(3, 1fr);
       max-width: 100%;
     }
   }
+
   @media (max-width: 600px) {
     &_wrapper {
       @include styles.flex-center;
       flex-direction: column;
     }
+
     &_layout {
       flex-direction: column;
       gap: 2.5rem;

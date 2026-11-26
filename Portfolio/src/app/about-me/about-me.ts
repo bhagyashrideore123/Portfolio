@@ -9,23 +9,26 @@ import { TranslateDirective, TranslatePipe, TranslateService } from '@ngx-transl
 })
 export class AboutMe {
   aboutmeData = [
-  {
-    name: 'Sahra Mueller',
-    project: 'DA Bublle',
-    quote: 'Bhagyashri had to develop, format and deliver content in collaboration with the team members. She is a reliable and friendly person.',
-    linkedin: 'https://www.linkedin.com/'
-  },
-  {
-    name: 'James Rugman',
-    project: 'Join',
-    quote: 'Bhagyashri is a reliable and friendly person. Works in a structured way and write a clear code. I recommend her as a colleague.',
-    linkedin: 'https://www.linkedin.com/'
-  },
-  {
-    name: 'Evelyn Marx',
-    project: 'Sharkie',
-    quote: 'She is a trustworthy teamplayer and can cope with the stress of deadlines. Structured work and clear code.',
-    linkedin: 'https://www.linkedin.com/'
-  }
-];
+    {
+      name: 'Oguz Akankan',
+      project: 'Join',
+      quote:
+        'Bhagyashri had to develop, format and deliver content in collaboration with the team members. She is a reliable and friendly person.',
+      linkedin: 'https://www.linkedin.com/',
+    },
+    {
+      name: 'Andre Strauch',
+      project: 'Join',
+      quote:
+        'Bhagyashri is a reliable and friendly person. Works in a structured way and write a clear code. I recommend her as a colleague.',
+      linkedin: 'https://www.linkedin.com/',
+    },
+    {
+      name: 'Sven Apel',
+      project: 'Join',
+      quote:
+        'She is a trustworthy teamplayer and can cope with the stress of deadlines. Structured work and clear code.',
+      linkedin: 'https://www.linkedin.com/',
+    },
+  ];
 }

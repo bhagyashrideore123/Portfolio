@@ -61,13 +61,16 @@
     @include styles.flex-center;
     justify-content: center;
     gap: 30px;
-    padding-top: 80px;
+    padding-top: 50px;
   }
   &_para {
     max-width: 550px;
   }
   &_para1 {
     max-width: 550px;
+    &_tel {
+      margin-top: 15px;
+    }
     &_email,
     &_tel {
       @include styles.flex-center;
@@ -257,6 +260,7 @@
     width: 460px;
   }
   .contact_form_flexCheckdbox{
+    width: 100%;
     justify-content: center;
   }
   .contact form p{
@@ -286,9 +290,7 @@
   }
   .contact_form_flexCheckdbox{
     width: unset;
+
   }
 }
 
-// @media screen and (max-width: 480px) {}
-// @media screen and (min-width: 481px) and (max-width: 768px){}
-// @media screen and (min-width: 768px) and (max-width: 1024px){}

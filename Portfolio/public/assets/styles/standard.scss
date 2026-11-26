@@ -1,4 +1,4 @@
-@use './variables' as v;
+@use './variables' as *;
 @use './mixins.scss' as m;
 
 * {
@@ -8,11 +8,12 @@
     position: relative;
     font-weight: 400;
     box-sizing: border-box;
-  
+    scrollbar-width: thin;
+    //background-color: $background
 }
 h1 {
     @include m.heading;
-    color: v.$primary;
+    color: $primary;
     font-weight: 400;
     font-family: Anta;
     font-size: clamp(2rem, calc(1.5rem + 2.5vw), 3.75rem);
@@ -24,18 +25,18 @@ h1 {
     font-size: 1rem;
 }
 .error {
-    color: v.$error_color;
+    color: $error_color;
 }
 
 .button_primary {
     padding: 13px 30px;
     border-radius: 30px;
-    border: 1px solid v.$primary;
-    background-color: v.$background;
-    color: v.$primary;
+    border: 1px solid $primary;
+    background-color: $background;
+    color: $primary;
     a {
         text-decoration: none;
-        color: v.$primary;
+        color: $primary;
         font-family: Josefin Sans;
         font-size: 1.2rem;
     }
@@ -43,10 +44,10 @@ h1 {
 .button_primary:hover {
     cursor: pointer;
     padding: 13px 30px;
-    border: 1px solid v.$primary;
-    background-color: v.$primary;
+    border: 1px solid $primary;
+    background-color: $primary;
     a {
-        color: v.$background;
+        color: $background;
     }
 }
 
