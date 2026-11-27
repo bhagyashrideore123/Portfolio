@@ -2,52 +2,58 @@
 
 .hero {
   @include styles.flex-center;
-  justify-content: center;
-  background-color: styles.$background;
-  padding: 40px 100px 0px 100px;
-  justify-content: center;
+  display: grid;                        
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;                
+  align-items: stretch;                 
   width: 100%;
-  height: calc(100dvh - 104px);       
-  padding-top: 100px;
+  min-height: calc(100dvh - 104px);
+  padding: clamp(40px, 7vw, 100px) clamp(24px, 7vw, 100px) 0;   
+  background-color: styles.$background;
 
+  &_wrapper_back_image.menu_open,
+  &_wrapper_back_image.menu_open:hover {
+    background-image: none;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &_backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 5;
+  }
   &_logo_responsive{
     display: none;
   }
   &_wrapper {
-    max-width: 1440px;
     @include styles.flex-center;
+    align-items: stretch;                 
     justify-content: space-between;
     width: 100%;
+    max-width: 1440px;
 
     &_back_image {
-      width: 100%;
-      height: 900px;
-      position: relative;
+      flex: 1 1 0;                       
+      min-width: 0;                       
+      position: relative;             
       background-image: url('/assets/fonts/images/photo/avatar-default-without hover.svg');
       background-repeat: no-repeat;
-      background-position: bottom;
+      background-position: center calc(100% + min(2.2vw, 41px)); 
       background-size: contain;
       transition: all 0.5s ease-in-out;
     }
     &_back_image:hover {
-      width: 100%;
-      height: 900px;
       background-image: url('/assets/fonts/images/photo/avatar-default.svg');
-      background-repeat: no-repeat;
-      background-position: bottom;
-      background-size: contain;
-      transition: all 0.5s ease-in-out;
-      
     }
   }
-
   &_img {
     width: 66px;
     height: 73px;
   }
  
   h1 {
-    font-size: clamp(3rem, calc(2.286rem + 3.571vw), 5.5rem);
+   font-size: clamp(2rem, 6.1vw, 5.5rem);   
     font-weight: 400;
     color: styles.$secondary;
   }
@@ -141,11 +147,13 @@
   }
   &_detail {
     @include styles.flex-center;
-    gap: 100px;
+    flex: 1 1 0;                         
+    min-width: 0;                         
+    align-self: center;                  
+    gap: clamp(32px, 7vw, 100px);         
     justify-content: space-between;
     flex-direction: column;
-    width: 100%;
-    padding-left: 100px;
+    padding-left: clamp(16px, 7vw, 100px);   
     &-text {
       p {
         text-align: center;
@@ -153,57 +161,17 @@
     }
   }
 }
-  @media screen and (min-width: 320px) and (max-width: 480px) {
-    .hero{
-      padding: 40px 40px;
-      figure {
-      display: none;
-    }
-    }
-    .hero_logo_responsive{
-        @include styles.flex-center;
-        justify-content: space-between;
-        font-family: Josefin Sans; ;
-        position: fixed;
-        z-index: 10;
-        top: 0;
-        background-color: styles.$background;
-        width: 100%;
-        padding: 10px;
-        h5{
-          color: styles.$secondary;
-        }
-        p{
-          color: styles.$primary;
-        }
-      figure {
-            display: block;
-            text-align: center;
-            img{
-              width: 52px;
-              height: 38px;
-            }
-          }
-    }
-    .hero_wrapper {
-      flex-direction: column;
-    }
-    .hero_social-icons {
-      display: none;
-    }
-    .hero_detail {
-      padding: 0;
-      gap: unset;
-    }
-    .hero_wrapper_back_image {
-      // content: url('/assets/fonts/images/icons/responsive_person_hero.svg');
-      // height: 370px;
-      // width: 311px;
-      // background: unset;
-      // margin-top: 50px;
-    }
-    .hero_scroll-down{
-      margin-top: 30px;
-    }
+@media screen and (max-width: 767px) {
+  .hero {
+    padding: 80px 24px 40px;   
+    figure { display: none; }
   }
-  
+  .hero_wrapper        { flex-direction: column; }
+  .hero_social-icons   { display: none; }
+  .hero_detail         { padding: 0; gap: unset; }
+  .hero_wrapper_back_image {
+    flex: none;
+    height: 320px;
+  }
+  .hero_scroll-down    { margin-top: 30px; }
+}

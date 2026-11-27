@@ -32,6 +32,13 @@
                         <p class="logoTxt">{{'hero.logoRole'|translate}}</p>
                     </figcaption>
                 </figure>
-                <button type="button" class="removeDefaultStyle" (click)="setBurgerMenu()"><img  src="assets/fonts/images/icons/symple menu.svg" alt="burger_menu"></button>
-
-</div>
+            <button type="button" class="removeDefaultStyle" (click)="menu.toggle()"
+                [attr.aria-label]="menu.isOpen() ? 'Close menu' : 'Open menu'">
+                @if (menu.isOpen()) {
+                <img src="assets/fonts/images/icons/burgerClose.svg" alt="burger_menu_close">
+                } @else {
+                <img src="assets/fonts/images/icons/symple menu.svg" alt="burger_menu">
+                }
+            </button>
+            
+            </div>

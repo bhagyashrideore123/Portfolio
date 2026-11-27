@@ -14,7 +14,7 @@ export class AboutMe {
       project: 'Join',
       quote:
         'Bhagyashri had to develop, format and deliver content in collaboration with the team members. She is a reliable and friendly person.',
-      linkedin: 'https://www.linkedin.com/',
+      linkedin: 'https://www.linkedin.com/in/oguz-akankan/',
     },
     {
       name: 'Andre Strauch',
@@ -28,7 +28,7 @@ export class AboutMe {
       project: 'Join',
       quote:
         'She is a trustworthy teamplayer and can cope with the stress of deadlines. Structured work and clear code.',
-      linkedin: 'https://www.linkedin.com/',
+      linkedin: 'https://www.linkedin.com/in/sven-apel/',
     },
   ];
 }

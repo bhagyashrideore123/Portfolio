@@ -1,7 +1,13 @@
 <section class="hero" id="hero">
-    <div class="hero_wrapper">        
-        <div class="hero_wrapper_back_image">
-            <img class="hero_wrapper_back_image_person_img" src=""  alt="">
+    @if (menu.isOpen()) {
+    <div class="hero_backdrop" (click)="menu.close()"></div>
+    }
+
+    <div class="hero_wrapper">
+        <div class="hero_wrapper_back_image" [class.menu_open]="menu.isOpen()">
+            @if (menu.isOpen()) {
+            <app-burger-menu></app-burger-menu>
+            }
         </div>
 
         <div class="hero_detail">
@@ -15,12 +21,12 @@
                 </figure>
 
                 <div class="hero_social-icons">
-                    <a target="_blank" href="mailto:deore.bhagyashri28@web.de" class="img1" aria-label="LinkedIn"><img
+                    <a target="_blank" href="mailto:deore.bhagyashri28@web.de" class="img1" aria-label="mail_logo"><img
                             src="assets/fonts/images/icons/Email_light.svg" alt="mail_logo"></a>
                     <a target="_blank" href="https://github.com/bhagyashrideore123/" class="img2"
                         aria-label="GitHub"><img src="assets/fonts/images/icons/Github_light.svg" alt="github_logo"></a>
                     <a target="_blank" href="https://www.linkedin.com/in/bhagyashri-deore-frontenddeveloper/"
-                        class="img3" aria-label="GitHub"><img src="assets/fonts/images/icons/Linkedin_light.svg"
+                        class="img3" aria-label="linkedin_logo"><img src="assets/fonts/images/icons/Linkedin_light.svg"
                             alt="linkedin_logo"></a>
                 </div>
             </div>
