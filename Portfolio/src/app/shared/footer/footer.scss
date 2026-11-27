@@ -1,6 +1,7 @@
 @use '../../../../public/assets/styles';
 
 .main-footer {
+  box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.20);
   @include styles.flex-center;
   flex-direction: column;
   max-width: 100%;
@@ -71,85 +72,69 @@ content: url('/assets/fonts/images/icons/linkedinHoverDesk.svg');
     }
 }
 }
-@media screen and (max-width: 480px) {
-  .main-footer{
-    padding: 20px 10px;
-    font-size: 1rem;
-    position: sticky;
+@media screen and (max-width: 767px) {
+  .main-footer {
+    position: fixed;
     bottom: 0;
     left: 0;
-    &_text{
-      @include styles.flex-center;
-      justify-content: center;
-      align-items: center;
-      gap: 5px;
-      p{
-        padding: unset;
-      }
-    }
-    &_wrapper{
+    z-index: 10;
+    padding: 10px 16px;
+    font-size: 0.75rem;
+
+    &_wrapper {
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      width: 100%;
-      gap: 10px;
+      gap: 8px;
       text-align: center;
     }
-    &_iconAlign{
-      .img1{
-        content: url('/assets/fonts/images/icons/Github_mobile.svg');
+
+    // order: logo → icons → text
+    &_logo      { order: 1; }
+    &_iconAlign { order: 2; }
+    &_text      { order: 3; }
+
+    figure {
+      img {
+        width: 36px;
       }
-      .img2{
- content: url('/assets/fonts/images/icons/Email_mobile.svg');
+      h5,
+      p {
+        font-size: 0.7rem;
       }
-      .img3{
- content: url('/assets/fonts/images/icons/Linkedin_mobile.svg');
+    }
+
+    &_iconAlign {
+      justify-content: center;
+      gap: 16px;
+
+      img {
+        width: 28px;
+        height: 28px;
+      }
+      .img1 { content: url('/assets/fonts/images/icons/Github_mobile.svg'); }
+      .img2 { content: url('/assets/fonts/images/icons/Email_mobile.svg'); }
+      .img3 { content: url('/assets/fonts/images/icons/Linkedin_mobile.svg'); }
+    }
+
+    &_text {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+
+      p {
+        padding: 0;
       }
     }
   }
- }
- @media screen and (min-width: 481px) and (max-width: 768px) {
-  .main-footer{
-    padding: 20px 20px;
-    font-size: 1rem;
-    position: sticky;
-    bottom: 0;
-    left: 0;
-    &_text{
-      @include styles.flex-center;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      p{
-        padding: unset;
-      }
-    }
-    &_wrapper{
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      gap: 10px;
-      text-align: center;
-    }
-    &_iconAlign{
-      .img1{
-        content: url('/assets/fonts/images/icons/Github_mobile.svg');
-      }
-      .img2{
- content: url('/assets/fonts/images/icons/Email_mobile.svg');
-      }
-      .img3{
- content: url('/assets/fonts/images/icons/Linkedin_mobile.svg');
-      }
-    }
-  }
- }
- @media screen and (min-width: 768px) and (max-width: 1024px){
-  .main-footer{
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .main-footer {
     padding: 30px;
-    font-family: 1.5rem;
+    font-size: 1.5rem;
   }
- }
+}
 
 

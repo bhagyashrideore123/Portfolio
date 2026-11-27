@@ -20,7 +20,7 @@
   "My_Skills": {
     "title": "My Skills",
     "lerning": "I am currently learning",
-    "lerning_text": "I’m currently exploring React and Vue.js to expand my frontend development skills and build more interactive web experiences. I enjoy learning new technologies and applying them to real projects as I grow."
+    "lerning_text": "I’m currently exploring React and Backend technologies to expand my frontend development skills and build more interactive web experiences. I enjoy learning new technologies and applying them to real projects as I grow."
   },
   "My_projects": {
     "title": "My Projects",
@@ -37,10 +37,10 @@
     "about2_text": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
     "duration2": "Duration: 3 weeks",
     "groupExp2": "My group work experience",
-    "groupExp2_text": "The project was completed by a team of three, where we worked together and shared responsibilities at a similar level. My role involved contributing to the development, implementing features, and cooperating with the team to keep the project moving smoothly.",
+    "groupExp2_text": "The project was completed by a team of four, where we worked together and shared responsibilities at a similar level. My role involved contributing to the development, implementing features, and cooperating with the team to keep the project moving smoothly.",
     "button_2": "Live Test",
     "organised2": "How I have organised my work process",
-    "organised2_text": "I keep my code clean by using clear naming, organizing files properly, and breaking the project into reusable components and modules. I also add comments and documentation where needed and test my code regularly to make sure it stays reliable and easy to maintain."
+    "organised2_text": "I build maintainable applications using structured file architecture, clear naming, and reusable Angular components. Regular testing and targeted documentation keep my code clean, reliable, and easy for teams to collaborate on."
   },
    "about_me": {
     "project":"Project",
@@ -48,7 +48,7 @@
     "title": "Need a teamplayer? Here’s what my colleagues say about me"
   },
     "contact": {
-    "contact_para":"Encourage people to contact you and describe what role you are interested in. Show that you will add value to their projects through your work. Example: Feel free to get in touch with job offers or opportunities such as: ...",
+    "contact_para":"Have a project in mind or a role to fill? As a Frontend Developer with 4 years of experience, I specialize in turning complex ideas into smooth, modern web applications using Angular, React, JavaScript, HTML, and SCSS. Reach out for full-time frontend roles, freelance work, or team collaborations—I’d love to add value to your next project.",
     "project":"Project",
     "linkedin":"Linked In Profile",
     "title": "Contact me",

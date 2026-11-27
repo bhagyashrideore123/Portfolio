@@ -95,8 +95,9 @@
       background-color: $background;
       justify-content: space-between;
       align-items: center;
-      z-index: 10;              // new: stays above the sections that scroll under it
-      box-sizing: border-box;   // new: width 100% now includes the 60px of side padding
+      z-index: 10;              
+      box-sizing: border-box;   
+      box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.20);
 
     .removeDefaultStyle{
       background: none;

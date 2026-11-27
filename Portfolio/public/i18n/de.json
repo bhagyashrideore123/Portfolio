@@ -20,7 +20,7 @@
   "My_Skills": {
     "title": "Meine Fähigkeiten",
     "lerning": "Das lerne ich gerade",
-    "lerning_text": "Ich beschäftige mich aktuell mit React und Vue.js, um meine Frontend-Entwicklungsfähigkeiten zu erweitern und interaktivere Weberlebnisse zu schaffen. Ich lerne gerne neue Technologien und wende sie in echten Projekten an, während ich mich weiterentwickle."
+    "lerning_text": "Derzeit beschäftige ich mich mit React und Backend-Technologien, um meine Kenntnisse in der Frontend-Entwicklung zu erweitern und interaktivere Web-Erlebnisse zu gestalten. Es macht mir Spaß, neue Technologien zu erlernen und sie im Laufe meiner beruflichen Entwicklung in konkreten Projekten anzuwenden."
   },
   "My_projects": {
     "title": "Meine Projekte",
@@ -37,10 +37,10 @@
     "about2_text": "Ein Task-Manager, inspiriert vom Kanban-System. Erstelle und organisiere Aufgaben per Drag-and-Drop, weise Nutzer und Kategorien zu.",
     "duration2": "Dauer: 3 Wochen",
     "groupExp2": "Meine Erfahrung in der Gruppenarbeit",
-    "groupExp2_text": "Das Projekt wurde von einem Team aus drei Personen umgesetzt, wobei wir zusammengearbeitet und die Verantwortung zu ähnlichen Teilen geteilt haben. Meine Rolle umfasste die Mitarbeit an der Entwicklung, die Umsetzung von Funktionen und die Zusammenarbeit mit dem Team, damit das Projekt reibungslos voranging.",
+    "groupExp2_text": "Das Projekt wurde von einem Team aus vier Personen umgesetzt, wobei wir zusammengearbeitet und die Verantwortung zu ähnlichen Teilen geteilt haben. Meine Rolle umfasste die Mitarbeit an der Entwicklung, die Umsetzung von Funktionen und die Zusammenarbeit mit dem Team, damit das Projekt reibungslos voranging.",
     "button_2": "Live-Test",
     "organised2": "Wie ich meinen Arbeitsprozess organisiert habe",
-    "organised2_text": "Ich halte meinen Code sauber, indem ich klare Benennungen verwende, Dateien ordentlich organisiere und das Projekt in wiederverwendbare Komponenten und Module aufteile. Außerdem füge ich bei Bedarf Kommentare und Dokumentation hinzu und teste meinen Code regelmäßig, damit er zuverlässig und leicht wartbar bleibt."
+    "organised2_text": "Ich entwickle wartbare Anwendungen unter Verwendung einer strukturierten Dateiorganisation, einer klaren Namenskonvention und wiederverwendbarer Angular-Komponenten. Regelmäßige Tests und eine zielgerichtete Dokumentation sorgen dafür, dass mein Code übersichtlich und zuverlässig bleibt und die Zusammenarbeit im Team erleichtert wird."
   },
   "about_me": {
     "project": "Projekt",
@@ -48,7 +48,7 @@
     "title": "Brauchen Sie eine Teamplayerin? Das sagen meine Kolleginnen und Kollegen über mich"
   },
   "contact": {
-    "contact_para": "Ermutigen Sie Besucher, Sie zu kontaktieren, und beschreiben Sie, an welcher Rolle Sie interessiert sind. Zeigen Sie, dass Sie durch Ihre Arbeit einen Mehrwert für deren Projekte schaffen. Beispiel: Melden Sie sich gerne bei mir mit Jobangeboten oder Möglichkeiten wie: ...",
+    "contact_para": "Haben Sie ein Projekt im Sinn oder eine Stelle zu besetzen? Als Frontend-Entwickler mit vier Jahren Berufserfahrung bin ich darauf spezialisiert, komplexe Ideen mithilfe von Angular, React, JavaScript, HTML und SCSS in reibungslos funktionierende, moderne Webanwendungen umzusetzen. Kontaktieren Sie mich gerne für Vollzeitstellen im Frontend-Bereich, freiberufliche Aufträge oder Teamkooperationen – ich würde mich freuen, einen wertvollen Beitrag zu Ihrem nächsten Projekt zu leisten.",
     "project": "Projekt",
     "linkedin": "LinkedIn-Profil",
     "title": "Kontaktieren Sie mich",

@@ -5,7 +5,7 @@
   display: grid;                        
   grid-template-columns: minmax(0, 1fr);
   justify-items: center;                
-  align-items: stretch;                 
+  align-items: center;                 
   width: 100%;
   min-height: calc(100dvh - 104px);
   padding: clamp(40px, 7vw, 100px) clamp(24px, 7vw, 100px) 0;   
@@ -174,4 +174,7 @@
     height: 320px;
   }
   .hero_scroll-down    { margin-top: 30px; }
+  .hero_wrapper_back_image {
+    background-image: url('/assets/fonts/images/photo/mobile view image.svg');
+  }
 }

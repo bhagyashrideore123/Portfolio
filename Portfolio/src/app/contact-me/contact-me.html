@@ -21,7 +21,7 @@
                 </div>
                 <div class="contact_para1_tel">
                     <img src="assets/fonts/images/icons/🦆 icon _phone_.svg" alt="phone_icon">
-                    <p>Tel: 0176 681 478 51</p>
+                    <p>Tel: +49 176 681 478 51</p>
                 </div>
             </section>
 
@@ -83,28 +83,15 @@
                     rows="5"></textarea>
             </div>
             <div class="contact_form_flexCheckdbox">
-                @if(userForm.controls['policycheck'].touched || userForm.controls['policycheck'].dirty){
-                @if(userForm.controls['policycheck'].errors?.['required']){
-                <input class="contact_form_checkbox" type="checkbox" name="policycheck" formControlName="policycheck"
-                    id="policycheck">
-                <label for="policycheck">{{'contact.privacy1'|translate}}<a
-                        href="">{{'contact.privacy2'|translate}}</a>{{'contact.privacy3'|translate}}</label><br><br>
-                <span class="error stdError">{{'contact.errorPOlicy'|translate}}</span>
-                }@else {
-                <input class="contact_form_checkbox" type="checkbox" name="policycheck" formControlName="policycheck"
-                    id="policycheck">
-                <label for="policycheck">{{'contact.privacy1'|translate}}<a
-                        href="">{{'contact.privacy2'|translate}}</a>{{'contact.privacy3'|translate}}</label>
-                }
-                }@else {
-                <input class="contact_form_checkbox" type="checkbox" name="policycheck" formControlName="policycheck"
-                    id="policycheck">
-                <label for="policycheck">{{'contact.privacy1'|translate}}<a
-                        href="">{{'contact.privacy2'|translate}}</a>{{'contact.privacy3'|translate}}</label>
-                }
-                
+    <input class="contact_form_checkbox" type="checkbox" id="policycheck" formControlName="policycheck">
+    <label for="policycheck" class="contact_form_checkbox_label" [class.error_box]="showPolicyError">
+        {{'contact.privacy1'|translate}}<a href="">{{'contact.privacy2'|translate}}</a>{{'contact.privacy3'|translate}}
+    </label>
 
-            </div>
+    @if (showPolicyError) {
+        <span class="error stdError contact_form_checkbox_error">{{'contact.errorPOlicy'|translate}}</span>
+    }
+</div>
 
             <div class="contact_form_button">
                 <button [disabled]="userForm.invalid" class="contact_form_sent_Btn"

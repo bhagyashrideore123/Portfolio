@@ -10,7 +10,7 @@
   color: styles.$secondary;
   padding: 100px;
   font-family: Josefin Sans;
- 
+
 
   img.contact_input_check {
     position: absolute;
@@ -19,11 +19,13 @@
     transform: translateY(-50%);
     width: 18px;
   }
-   &_scroll-down {
+
+  &_scroll-down {
     padding: 10px 5px;
     border: 1px solid styles.$primary;
     border-radius: 30px;
   }
+
   &_scroll-down:hover {
     cursor: pointer;
     padding: 10px 5px;
@@ -31,9 +33,11 @@
     background-color: styles.$button_hover;
     color: styles.$primary;
   }
-  &_scroll-down2{
+
+  &_scroll-down2 {
     display: none;
   }
+
   input {
     width: 440px;
     height: 60px;
@@ -41,7 +45,7 @@
     color: styles.$secondary;
     border: 1px solid styles.$button_border;
     background-color: styles.$background;
-    text-indent: 25px; //it decides from which point cursor start writing
+    text-indent: 25px;
   }
 
   input:hover {
@@ -51,44 +55,52 @@
   &_wrapper {
     max-width: 1440px;
     width: 100%;
+
     &_flexdiv {
       @include styles.flex-center;
       justify-content: space-between;
       margin-top: 15px;
     }
   }
+
   &_align_info {
     @include styles.flex-center;
     justify-content: center;
     gap: 30px;
     padding-top: 50px;
   }
+
   &_para {
     max-width: 550px;
   }
+
   &_para1 {
     max-width: 550px;
+
     &_tel {
       margin-top: 15px;
     }
+
     &_email,
     &_tel {
       @include styles.flex-center;
       justify-content: flex-start;
       gap: 20px;
     }
+
     &_email:hover,
     &_tel:hover {
       color: styles.$primary;
       cursor: pointer;
     }
   }
+
   &_form {
     @include styles.flex-center;
     flex-direction: column;
     padding-top: 50px;
 
-    p{
+    p {
       display: none;
     }
 
@@ -96,20 +108,25 @@
       @include styles.flex-center;
       justify-content: center;
       gap: 20px;
+
       label {
         color: styles.$primary;
       }
     }
+
     &_padding {
       padding-top: 20px;
     }
+
     &_message_input {
       width: 100%;
       color: styles.$primary;
     }
+
     &_message_label {
       color: styles.$primary;
     }
+
     &_message_textarea {
       scrollbar-width: none;
       width: 900px;
@@ -123,15 +140,18 @@
       text-indent: 25px;
       padding-top: 20px;
     }
+
     &_message_textarea:hover {
       background-color: styles.$button_hover;
     }
+
     &_sent_Btn:disabled {
       border: 1px solid styles.$button_disabled;
       background-color: styles.$background;
       color: styles.$button_disabled;
       float: right;
     }
+
     &_sent_Btn {
       padding: 13px 30px;
       border-radius: 30px;
@@ -140,24 +160,69 @@
       color: styles.$primary;
       float: right;
     }
+
     &_flexCheckdbox {
-      @include styles.flex-center;
-      gap: 10px;
-      justify-content: flex-start;
+      display: flex;
+      flex-direction: column; // error message goes under the text
+      align-items: flex-start;
+      gap: 8px;
       width: 900px;
-      p {
-        width: 850px;
-      }
+      margin: 24px 0;
       a {
         color: styles.$primary;
         text-decoration: none;
+        padding: 0 4px;
       }
     }
+
     &_checkbox {
-      width: 20px !important;
-      border-radius: 100% !important;
-     
+      position: absolute;
+      opacity: 0;
+      width: 1px !important;
+      height: 1px !important;
     }
+
+    &_checkbox_label {
+      position: relative;
+      padding-left: 34px; // space for the image
+      cursor: pointer;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 22px;
+        height: 22px;
+        background: url('/assets/fonts/images/icons/Check box-default.svg') no-repeat center / contain;
+      }
+
+      &:hover::before {
+        background-image: url('/assets/fonts/images/icons/Check box-hovered.svg');
+      }
+
+      &.error_box::before {
+        background-image: url('/assets/fonts/images/icons/Check box-errored.svg');
+      }
+    }
+
+    // checked: must come last so it wins over hover
+    &_checkbox:checked+&_checkbox_label::before {
+      background-image: url('/assets/fonts/images/icons/Check box-checked.svg');
+    }
+
+    // visible outline when using the Tab key
+    &_checkbox:focus-visible+&_checkbox_label::before {
+      outline: 2px solid styles.$primary;
+      outline-offset: 2px;
+      border-radius: 50%;
+    }
+
+    &_checkbox_error {
+      padding-left: 34px; // lines up with the text, like in the design
+    }
+
     &_button {
       @include styles.flex-center;
       width: 900px;
@@ -165,132 +230,160 @@
     }
   }
 }
+
 @media screen and (max-width: 480px) {
-  .contact{
+  .contact {
     padding: 25px;
-    
+
   }
-  .contact_wrapper{
-    a{
+
+  .contact_wrapper {
+    a {
       display: none;
     }
   }
-  .contact input{
+
+  .contact input {
     width: 300px;
   }
-    .contact textarea{
+
+  .contact textarea {
     width: 300px;
     min-width: 300px;
     max-width: 300px;
   }
-   .contact_form_align_part1{
+
+  .contact_form_align_part1 {
     flex-direction: column;
-    
+
   }
-   .contact_wrapper_flexdiv{
+
+  .contact_wrapper_flexdiv {
     flex-direction: column;
     justify-content: center;
   }
-  .contact_align_info{
-      flex-direction: column;
-      justify-content: flex-start;
+
+  .contact_align_info {
+    flex-direction: column;
+    justify-content: flex-start;
   }
-   .contact_form_button{
+
+  .contact_form_button {
     width: 300px;
   }
-  .contact_form_flexCheckdbox{
+
+  .contact_form_flexCheckdbox {
     justify-content: center;
     width: 100%;
   }
-  .contact form p{
+
+  .contact form p {
     display: block;
     color: styles.$primary;
     padding-bottom: 30px;
   }
-  .contact_scroll-down2{
+
+  .contact_scroll-down2 {
     display: block;
     padding: 10px 5px;
     border: 1px solid styles.$primary;
     border-radius: 30px;
-    margin: 40px 0px;
-  
+    margin-bottom: 141px;
+
   }
 }
-@media screen and (min-width: 481px) and (max-width: 768px){
-  .contact{
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .contact {
     padding: 20px;
-    
+
   }
-  .contact_scroll-down2{
+
+  .contact_scroll-down2 {
     display: block;
     padding: 10px 5px;
     border: 1px solid styles.$primary;
     border-radius: 30px;
     margin: 40px 0px;
-  
+
   }
-  .contact_wrapper{
-    a{
+
+  .contact_wrapper {
+    a {
       display: none;
     }
   }
-  .contact_wrapper_flexdiv{
+
+  .contact_wrapper_flexdiv {
     flex-direction: column;
     justify-content: center;
   }
-  .contact_align_info{
-      flex-direction: column;
-      justify-content: flex-start;
+
+  .contact_align_info {
+    flex-direction: column;
+    justify-content: flex-start;
   }
-  .contact input{
+
+  .contact input {
     width: 460px;
   }
-    .contact textarea{
-      width: 460px;
-      max-width: 460px;
-      min-width: 460px;
-    }
-  .contact_para1{
+
+  .contact textarea {
+    width: 460px;
+    max-width: 460px;
+    min-width: 460px;
+  }
+
+  .contact_para1 {
     width: 100%;
   }
-  .contact_form_align_part1{
+
+  .contact_form_align_part1 {
     flex-direction: column;
   }
-  .contact_form_button{
+
+  .contact_form_button {
     width: 460px;
   }
-  .contact_form_flexCheckdbox{
+
+  .contact_form_flexCheckdbox {
     width: 100%;
     justify-content: center;
   }
-  .contact form p{
+
+  .contact form p {
     display: block;
     color: styles.$primary;
     padding-bottom: 30px;
   }
 }
-@media screen and (min-width: 768px) and (max-width: 1024px){
-  .contact{
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .contact {
     padding: 30px;
   }
-  .contact_wrapper{
+
+  .contact_wrapper {
     width: 700px;
     max-width: 100%;
   }
-  .contact input{
+
+  .contact input {
     width: 300px;
   }
-  .contact_form_button{
+
+  .contact_form_button {
     width: 600px;
   }
-  .contact textarea{
+
+  .contact textarea {
     width: 620px;
     max-width: 620px;
     min-width: 620px;
   }
-  .contact_form_flexCheckdbox{
+
+  .contact_form_flexCheckdbox {
     width: unset;
 
   }
 }
-

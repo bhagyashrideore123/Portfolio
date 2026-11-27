@@ -3,12 +3,6 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, ReactiveFormsModu
 import { Router } from '@angular/router';
 import { TranslateDirective, TranslatePipe, TranslateService } from '@ngx-translate/core';
 
-export function forbiddenNameValidator(name: string): ValidatorFn {
-  return (control: AbstractControl): ValidationErrors | null => {
-   return control.value == name ? {forbiddenName: {value: control.value}} : null;
-  };
-}
-
 
 @Component({
   imports: [ReactiveFormsModule,TranslatePipe, TranslateDirective],
@@ -27,7 +21,7 @@ export class ContactMe {
       name:['',[Validators.required]],
       email:['',[Validators.required, Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')]] ,
       message:['',[Validators.required, Validators.maxLength(200)]],
-      policycheck:[false,Validators.requiredTrue,forbiddenNameValidator(" ")]
+      policycheck:[false,Validators.requiredTrue]
   })
 
   formSubmit()
@@ -47,6 +41,9 @@ export class ContactMe {
   get email(){
     return this.userForm.get("email")
   }
-
+get showPolicyError(): boolean {
+  const control = this.userForm.controls['policycheck'];
+  return control.touched && !!control.errors?.['required'];
+}
 
 }
